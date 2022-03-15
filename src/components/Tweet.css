@@ -1,0 +1,5 @@
+.logo-small {
+  width: 1rem;
+  filter: invert(97%) sepia(0%) saturate(0%) hue-rotate(179deg) brightness(90%)
+    contrast(83%);
+}
