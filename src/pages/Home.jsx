@@ -7,13 +7,13 @@ function Home() {
   return (
     <div className="container">
       <div className="row">
-        <div>
+        <div className="col-4">
           <SideBarLeft />
         </div>
-        <div>
+        <div className="col-4 ">
           <Tweet />
         </div>
-        <div>
+        <div className="col-4">
           <SideBarRight />
         </div>
       </div>
