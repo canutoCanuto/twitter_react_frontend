@@ -2,22 +2,22 @@ import React from "react";
 import SideBarLeft from "../components/SideBarLeft";
 import SideBarRight from "../components/SideBarRight";
 import Tweet from "../components/Tweet";
-
+import { Container, Row, Col } from "react-bootstrap";
 function Home() {
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-4">
+    <Container>
+      <Row>
+        <Col>
           <SideBarLeft />
-        </div>
-        <div className="col-4 ">
+        </Col>
+        <Col>
           <Tweet />
-        </div>
-        <div className="col-4">
+        </Col>
+        <Col>
           <SideBarRight />
-        </div>
-      </div>
-    </div>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
