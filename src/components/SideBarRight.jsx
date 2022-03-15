@@ -1,7 +1,7 @@
 import React from "react";
 
-function SiderBarR() {
+function SideBarR() {
   return <div>SiderBarR</div>;
 }
 
-export default SiderBarR;
+export default SideBarR;
