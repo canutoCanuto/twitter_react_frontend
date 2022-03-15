@@ -7,13 +7,13 @@ function Home() {
   return (
     <Container>
       <Row>
-        <Col>
+        <Col xs={2} sm={2} md={3} lg={2}>
           <SideBarLeft />
         </Col>
-        <Col>
+        <Col xs={10} sm={10} md={9} lg={6}>
           <Tweet />
         </Col>
-        <Col>
+        <Col lg={4}>
           <SideBarRight />
         </Col>
       </Row>
