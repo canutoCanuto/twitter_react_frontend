@@ -1,7 +1,9 @@
 import { createStore } from "redux";
-// import listReducer from "./listReducer";
+import tweetReducer from "./tweetReducer";
+
 const store = createStore(
-  //   listReducer,
+  tweetReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
+
 export default store;
