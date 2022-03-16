@@ -1,7 +1,6 @@
 import React from "react";
 import { Row, Col, Image } from "react-bootstrap";
 import "./Tweet.css";
-import { useSelector } from "react-redux";
 
 function Tweet() {
   return (
