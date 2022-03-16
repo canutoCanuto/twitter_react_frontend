@@ -1,7 +1,8 @@
 import React from "react";
 import SideBarLeft from "../components/SideBarLeft";
 import SideBarRight from "../components/SideBarRight";
-import Tweet from "../components/Tweet";
+import TweetList from "../components/TweetList";
+import CreateTweet from "../components/CreateTweet";
 import { Container, Row, Col } from "react-bootstrap";
 function Home() {
   return (
@@ -11,7 +12,8 @@ function Home() {
           <SideBarLeft />
         </Col>
         <Col xs={10} sm={10} md={9} lg={6}>
-          <Tweet />
+          <CreateTweet />
+          <TweetList />
         </Col>
         <Col lg={4}>
           <SideBarRight />

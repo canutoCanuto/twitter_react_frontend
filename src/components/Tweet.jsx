@@ -1,10 +1,11 @@
 import React from "react";
 import { Row, Col, Image } from "react-bootstrap";
 import "./Tweet.css";
+import { useSelector } from "react-redux";
 
 function Tweet() {
   return (
-    <div>
+    <>
       <Row className="border-top mx-1 tweet bg-black text-light">
         <Col className="border-bottom">
           <div className="d-flex pt-3 justify-content-center">
@@ -82,7 +83,7 @@ function Tweet() {
           </div>
         </Col>
       </Row>
-    </div>
+    </>
   );
 }
 
