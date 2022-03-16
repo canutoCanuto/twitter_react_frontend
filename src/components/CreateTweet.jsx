@@ -15,7 +15,7 @@ function CreateTweet() {
   };
 
   return (
-    <Row className="py-2 bg-black text-light mx-1">
+    <Row className="py-2 bg-black text-light mx-1 border-bottom">
       <Col sm={2}>
         <img src="" alt="Avatar" />
       </Col>

@@ -7,7 +7,7 @@ function TweetList() {
 
   return tweetList.map((tweet) => (
     <Row
-      className="border-top mx-1 tweet bg-black text-light"
+      className="mx-1 tweet bg-black text-light"
       key={tweet.id}
       onClick={console.log("hola")}
     >

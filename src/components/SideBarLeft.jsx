@@ -1,12 +1,25 @@
 import React from "react";
 import { Button, Modal, Form, Row, Col } from "react-bootstrap";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import actions from "../redux/tweetActions";
 
 function SideBarL() {
+  const [newTweet, setNewTweet] = useState("");
+  const dispatch = useDispatch();
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+    if (!newTweet) return;
+    dispatch(actions.create(newTweet));
+    setNewTweet("");
+    setShow(false);
+  };
 
   return (
     <>
@@ -38,7 +51,7 @@ function SideBarL() {
         </div>
       </a>
 
-      <a href="#" className="">
+      <a href="/home" className="">
         <div className="div-container p-2 rounded-pill">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="logo">
@@ -53,7 +66,7 @@ function SideBarL() {
         </div>
       </a>
 
-      <a href="#" className="">
+      <a href="/home" className="">
         <div className="div-container p-2 rounded-pill">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="logo">
@@ -68,7 +81,7 @@ function SideBarL() {
         </div>
       </a>
 
-      <a href="#" className="">
+      <a href="/home" className="">
         <div className="div-container p-2 rounded-pill">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="logo">
@@ -82,7 +95,7 @@ function SideBarL() {
           </div>
         </div>
       </a>
-      <a href="#" className="">
+      <a href="/home" className="">
         <div className="div-container p-2 rounded-pill">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="logo">
@@ -96,7 +109,7 @@ function SideBarL() {
           </div>
         </div>
       </a>
-      <a href="#" className="">
+      <a href="/home" className="">
         <div className="div-container p-2 rounded-pill">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="logo">
@@ -125,7 +138,7 @@ function SideBarL() {
           </div>
         </div>
       </a>
-      <a href="#" className="">
+      <a href="/home" className="">
         <div className="div-container p-2 rounded-pill">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="logo">
@@ -172,17 +185,19 @@ function SideBarL() {
               <img src="" alt="Avatar" />
             </Col>
             <Col>
-              <Form action="" className="">
+              <Form>
                 <Form.Control
                   as="textarea"
                   style={{ height: "8rem" }}
                   className="bg-black text-light"
                   placeholder="What's happening?"
+                  value={newTweet}
+                  onChange={(e) => setNewTweet(e.target.value)}
                 />
                 <Button
                   variant="primary"
                   className="rounded-pill fw-bold mt-2"
-                  onClick={handleClose}
+                  onClick={handleSubmit}
                 >
                   Tweet
                 </Button>

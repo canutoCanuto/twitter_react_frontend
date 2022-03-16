@@ -13,7 +13,7 @@ function User() {
         <Col xs={10} sm={10} md={9} lg={6}>
           <div className="row mx-1 sticky-top bg-black text-light pt-2">
             <div className="col-1 p-3">
-              <a href="#">
+              <a href="/home">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 448 512"
