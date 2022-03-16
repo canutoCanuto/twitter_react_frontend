@@ -61,14 +61,14 @@ function Widgets() {
         </div>
 
         <div className="widgets__widgetContainer">
-          <h2>Who to follow</h2>
+          <h2 className="pcolor">Who to follow</h2>
           <div id="elObservador" className="container-fluid">
             <div className="row">
               <div className="col-3">
                 <img className="" src="/img/mSTk9qRJ_400x400.jpg" alt="" />
               </div>
               <div className="col-4">
-                <h6 className=" text-start">
+                <h6 className=" text-start pcolor">
                   El Observador
                   <svg
                     viewBox="0 0 24 24"
@@ -81,13 +81,13 @@ function Widgets() {
                     </g>
                   </svg>
                 </h6>{" "}
-                <p className="text-start">
+                <p className="text-start pcolor">
                   <small>@Observador</small>
                 </p>
               </div>
               <div className="col ms-3 mt-3 w-25 ">
                 <a href="">
-                  <button className="btn btn-primary rounded-pill px-3 py-0 ">
+                  <button className="btn btn-primary rounded-pill px-3 py-0  pcolor">
                     Follow
                   </button>
                 </a>
@@ -100,7 +100,7 @@ function Widgets() {
                 <img className="" src="/img/mSTk9qRJ_400x400.jpg" alt="" />
               </div>
               <div className="col-4">
-                <h6 className=" text-start">
+                <h6 className=" text-start pcolor">
                   Tom hardy{" "}
                   <svg
                     viewBox="0 0 24 24"
@@ -113,13 +113,13 @@ function Widgets() {
                     </g>
                   </svg>
                 </h6>
-                <p className="text-start">
+                <p className="text-start pcolor">
                   <small>@_VSimmons</small>
                 </p>
               </div>
               <div className="col ms-3 mt-3 w-25 ">
                 <a href="">
-                  <button className="btn btn-primary rounded-pill px-3 py-0 ">
+                  <button className="btn btn-primary rounded-pill px-3 py-0 pcolor">
                     Follow
                   </button>
                 </a>
@@ -132,7 +132,7 @@ function Widgets() {
                 <img className="" src="/img/mSTk9qRJ_400x400.jpg" alt="" />
               </div>
               <div className="col-4">
-                <h6 className=" text-start">
+                <h6 className=" text-start pcolor">
                   Game of Thrones{" "}
                   <svg
                     viewBox="0 0 24 24"
@@ -145,13 +145,13 @@ function Widgets() {
                     </g>
                   </svg>
                 </h6>
-                <p className="text-start">
+                <p className="text-start pcolor">
                   <small>@GameOfThrones</small>
                 </p>
               </div>
               <div className="col ms-3 mt-3 w-25 ">
                 <a href="">
-                  <button className="btn btn-primary rounded-pill px-3 py-0 ">
+                  <button className="btn btn-primary rounded-pill px-3 py-0 pcolor">
                     Follow
                   </button>
                 </a>
@@ -161,10 +161,14 @@ function Widgets() {
           <div id="elObservador" className="container-fluid">
             <div className="row">
               <div className="col-3">
-                <img className="" src="/img/mSTk9qRJ_400x400.jpg" alt="" />
+                <img
+                  className="pcolor"
+                  src="/img/mSTk9qRJ_400x400.jpg"
+                  alt=""
+                />
               </div>
               <div className="col-4">
-                <h6 className=" text-start">
+                <h6 className=" text-start pcolor">
                   George RR Martin{" "}
                   <svg
                     viewBox="0 0 24 24"
@@ -177,13 +181,13 @@ function Widgets() {
                     </g>
                   </svg>
                 </h6>
-                <p className="text-start">
+                <p className="text-start pcolor">
                   <small>@GRRMspeaking</small>
                 </p>
               </div>
               <div className="col ms-3 mt-3 w-25 ">
                 <a href="">
-                  <button className="btn btn-primary rounded-pill px-3 py-0 ">
+                  <button className="btn btn-primary rounded-pill px-3 py-0  ">
                     Follow
                   </button>
                 </a>
@@ -196,7 +200,7 @@ function Widgets() {
                 <img className="" src="/img/mSTk9qRJ_400x400.jpg" alt="" />
               </div>
               <div className="col-4">
-                <h6 className=" text-start">
+                <h6 className=" text-start pcolor">
                   Pat Rothfuss{" "}
                   <svg
                     viewBox="0 0 24 24"
@@ -209,7 +213,7 @@ function Widgets() {
                     </g>
                   </svg>
                 </h6>
-                <p className="text-start">
+                <p className="text-start pcolor">
                   <small>@PatrickRothfuss</small>
                 </p>
               </div>
