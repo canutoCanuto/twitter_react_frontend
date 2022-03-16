@@ -16,9 +16,50 @@ function Widgets() {
           <input placeholder="Search Twitter" type="text" />
         </div>
 
-        <div className="widgets__widgetContainer">
+        <div className="widgets__widgetContainer list-group ">
           <h2>What's happening</h2>
+          <a href="#" className=" list-group-item-action rounded-3 ">
+            <div className="d-flex w-100 justify-content-between ">
+              <small className="mb-1">Tendencias en Uruguay</small>
+              <a className="text-muted">...</a>
+            </div>
+            <div className="text-start">
+              <p className="mb-1 pcolor">WhatsApp</p>
+              <small className="mb-1 ">1.298 Tweets</small>
+            </div>
+          </a>
+          <a href="#" className=" list-group-item-action  rounded-3 ">
+            <div className="d-flex w-100 justify-content-between ">
+              <small className="mb-1">Tendencias en Uruguay</small>
+              <a className="text-muted">...</a>
+            </div>
+            <div className="text-start">
+              <p className="mb-1 pcolor">WhatsApp</p>
+              <small className="mb-1 ">1.298 Tweets</small>
+            </div>
+          </a>
+          <a href="#" className=" list-group-item-action rounded-3 ">
+            <div className="d-flex w-100 justify-content-between ">
+              <small className="mb-1">Tendencias en Uruguay</small>
+              <a className="text-muted">...</a>
+            </div>
+            <div className="text-start">
+              <p className="mb-1 pcolor">WhatsApp</p>
+              <small className="mb-1 ">1.298 Tweets</small>
+            </div>
+          </a>
+          <a href="#" className=" list-group-item-action rounded-3 ">
+            <div className="d-flex w-100 justify-content-between ">
+              <small className="mb-1">Tendencias en Uruguay</small>
+              <a className="text-muted">...</a>
+            </div>
+            <div className="text-start">
+              <p className="mb-1 pcolor">WhatsApp</p>
+              <small className="mb-1 ">1.298 Tweets</small>
+            </div>
+          </a>
         </div>
+
         <div className="widgets__widgetContainer">
           <h2>Who to follow</h2>
           <div id="elObservador" className="container-fluid">

@@ -35,6 +35,9 @@
   font-weight: 800;
 }
 
-#elObservador {
-  font-size: 20px;
+.pcolor {
+  color: black;
+}
+.divWhats {
+  background-color: #f5f8fa;
 }
