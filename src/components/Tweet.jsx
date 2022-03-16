@@ -5,7 +5,7 @@ import "./Tweet.css";
 function Tweet() {
   return (
     <div>
-      <Row className="border-top mx-1 tweet">
+      <Row className="border-top mx-1 tweet bg-dark text-light">
         <Col className="border-bottom">
           <div className="d-flex pt-3 justify-content-center">
             <div>
