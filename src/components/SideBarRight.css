@@ -26,7 +26,7 @@
   margin-top: 15px;
   margin-left: 20px;
   padding: 20px;
-  background-color: #f5f8fa;
+  background-color: #16181c;
   border-radius: 20px;
 }
 
@@ -38,6 +38,11 @@
 .pcolor {
   color: black;
 }
-.divWhats {
-  background-color: #f5f8fa;
+
+.tituloSideBar {
+  color: white;
+}
+
+.whastHapp :hover {
+  background-color: #16181c;
 }

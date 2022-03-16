@@ -16,9 +16,9 @@ function Widgets() {
           <input placeholder="Search Twitter" type="text" />
         </div>
 
-        <div className="widgets__widgetContainer list-group ">
-          <h2>What's happening</h2>
-          <a href="#" className=" list-group-item-action rounded-3 mb-3">
+        <div className="widgets__widgetContainer list-group  whastHapp">
+          <h2 className="tituloSideBar">What's happening</h2>
+          <a href="#" className=" list-group-item-action rounded-3 mb-3 ">
             <div className="d-flex w-100 justify-content-between ">
               <small className="mb-1">Tendencias en Uruguay</small>
               <a className="text-muted">...</a>
