@@ -10,15 +10,25 @@ import SearchIcon from "@material-ui/icons/Search";
 function Widgets() {
   return (
     <>
-      <div className="widgets d-none d-lg-block">
-        <div className="widgets__input">
+      <div className="widgets d-none d-lg-block ">
+        <div className="widgets__input sticky-top">
           <SearchIcon className="widgets__searchIcon" />
           <input placeholder="Search Twitter" type="text" />
         </div>
 
         <div className="widgets__widgetContainer list-group ">
           <h2>What's happening</h2>
-          <a href="#" className=" list-group-item-action rounded-3 ">
+          <a href="#" className=" list-group-item-action rounded-3 mb-3">
+            <div className="d-flex w-100 justify-content-between ">
+              <small className="mb-1">Tendencias en Uruguay</small>
+              <a className="text-muted">...</a>
+            </div>
+            <div className="text-start">
+              <p className="mb-1 pcolor">Hack Academy</p>
+              <small className="mb-1 ">1.000.000 Tweets</small>
+            </div>
+          </a>
+          <a href="#" className=" list-group-item-action  rounded-3 mb-3">
             <div className="d-flex w-100 justify-content-between ">
               <small className="mb-1">Tendencias en Uruguay</small>
               <a className="text-muted">...</a>
@@ -28,34 +38,24 @@ function Widgets() {
               <small className="mb-1 ">1.298 Tweets</small>
             </div>
           </a>
-          <a href="#" className=" list-group-item-action  rounded-3 ">
+          <a href="#" className=" list-group-item-action rounded-3 mb-3">
             <div className="d-flex w-100 justify-content-between ">
               <small className="mb-1">Tendencias en Uruguay</small>
               <a className="text-muted">...</a>
             </div>
             <div className="text-start">
-              <p className="mb-1 pcolor">WhatsApp</p>
-              <small className="mb-1 ">1.298 Tweets</small>
+              <p className="mb-1 pcolor">ANCAP</p>
+              <small className="mb-1 ">1 Tweets</small>
             </div>
           </a>
-          <a href="#" className=" list-group-item-action rounded-3 ">
+          <a href="#" className=" list-group-item-action rounded-3 mb-3">
             <div className="d-flex w-100 justify-content-between ">
               <small className="mb-1">Tendencias en Uruguay</small>
               <a className="text-muted">...</a>
             </div>
             <div className="text-start">
-              <p className="mb-1 pcolor">WhatsApp</p>
-              <small className="mb-1 ">1.298 Tweets</small>
-            </div>
-          </a>
-          <a href="#" className=" list-group-item-action rounded-3 ">
-            <div className="d-flex w-100 justify-content-between ">
-              <small className="mb-1">Tendencias en Uruguay</small>
-              <a className="text-muted">...</a>
-            </div>
-            <div className="text-start">
-              <p className="mb-1 pcolor">WhatsApp</p>
-              <small className="mb-1 ">1.298 Tweets</small>
+              <p className="mb-1 pcolor">Grupo 9</p>
+              <small className="mb-1 ">10 Tweets</small>
             </div>
           </a>
         </div>
