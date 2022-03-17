@@ -3,6 +3,7 @@ import { Button, Modal, Form, Row, Col } from "react-bootstrap";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import actions from "../redux/tweetActions";
+import "./SideBarLeft.css";
 
 function SideBarL() {
   const [newTweet, setNewTweet] = useState("");
@@ -22,7 +23,7 @@ function SideBarL() {
   };
 
   return (
-    <>
+    <div className="sidebar-left-container">
       <a href="/home">
         <div
           className="div-container p-2 rounded-pill mt-2 mb-3"
@@ -203,7 +204,7 @@ function SideBarL() {
           </Row>
         </Modal.Body>
       </Modal>
-    </>
+    </div>
   );
 }
 
