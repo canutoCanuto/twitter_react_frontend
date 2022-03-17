@@ -1,16 +1,31 @@
 import { useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import axios from "axios";
 import { useDispatch } from "react-redux";
 import actions from "../redux/tweetActions";
 
 function CreateTweet() {
   const [newTweet, setNewTweet] = useState("");
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
+  const sessionData = useSelector((state) => state.users[0]);
 
-  const handleSubmit = (ev) => {
+  const handleSubmit = async (ev) => {
     ev.preventDefault();
     if (!newTweet) return;
-    dispatch(actions.create(newTweet));
+    // llamada
+    console.log(sessionData);
+    try {
+      const response = await axios.post(
+        process.env.REACT_APP_API_URL + "/tweets",
+        { data: { content: newTweet } },
+        { headers: { Authorization: `Bearer ${sessionData.token}` } }
+      );
+      console.log(response.data);
+      // dispatch(actions.create(newTweet));
+    } catch (error) {
+      console.log(error);
+    }
     setNewTweet("");
   };
 
