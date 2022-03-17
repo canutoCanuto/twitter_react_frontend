@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Row, Col, Image } from "react-bootstrap";
 
 function TweetList() {
-  const tweetList = useSelector((state) => state);
+  const tweetList = useSelector((state) => state.tweets);
 
   return tweetList.map((tweet) => (
     <Row

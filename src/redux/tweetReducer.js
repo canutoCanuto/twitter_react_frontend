@@ -7,6 +7,7 @@ function tweetReducer(state = [], action) {
         {
           id: state.length + 1,
           content: action.payload,
+          likes: [],
         },
       ];
 

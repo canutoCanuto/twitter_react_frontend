@@ -1,8 +1,14 @@
-import { createStore } from "redux";
+import { createStore, combineReducers } from "redux";
 import tweetReducer from "./tweetReducer";
+import userReducer from "./userReducer";
+
+const rootReducer = combineReducers({
+  tweets: tweetReducer,
+  users: userReducer,
+});
 
 const store = createStore(
-  tweetReducer,
+  rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

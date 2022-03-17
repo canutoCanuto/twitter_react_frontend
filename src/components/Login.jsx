@@ -11,13 +11,17 @@ function Login() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (ev) => {
+    ev.preventDefault();
     try {
-      const response = await axios.post(process.env.API_URL + "/users/login", {
-        username: username,
-        password: password,
-      });
-      console.log(response);
+      const response = await axios.post(
+        process.env.REACT_APP_API_URL + "/users/login",
+        {
+          username: username,
+          password: password,
+        }
+      );
+      console.log(response.data);
     } catch (error) {
       console.log(error);
     }
