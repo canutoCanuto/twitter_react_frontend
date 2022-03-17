@@ -1,12 +1,15 @@
-import React from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import axios from "axios";
+import actions from "../redux/userActions";
 
 function Login() {
   const [show, setShow] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const dispatch = useDispatch();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -21,7 +24,7 @@ function Login() {
           password: password,
         }
       );
-      console.log(response.data);
+      dispatch(actions.login(response.data));
     } catch (error) {
       console.log(error);
     }

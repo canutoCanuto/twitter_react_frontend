@@ -1,15 +1,7 @@
 function userReducer(state = [], action) {
   switch (action.type) {
     case "LOGIN":
-      return [
-        ...state,
-
-        {
-          id: "",
-          username: "",
-          token: "",
-        },
-      ];
+      return [...state, action.payload];
 
     default:
       return state;
