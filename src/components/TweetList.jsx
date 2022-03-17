@@ -18,7 +18,6 @@ function TweetList() {
         { headers: { Authorization: `Bearer ${token}` } }
       );
       dispatch(actions.randomlist(response.data.last100Tweets));
-      console.log(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -33,15 +32,25 @@ function TweetList() {
       <Col className="border-bottom">
         <div className="d-flex pt-3 justify-content-center">
           <div>
-            <Image src="" alt="Avatar" roundedCircle={true} />
+            <Image
+              src={tweet.author.avatar}
+              alt="Avatar"
+              roundedCircle={true}
+              className="profile-avatar"
+            />
           </div>
           <div className="ms-3">
             <Row className="justify-content-between text-start">
               <Col md={11}>
                 <span className="fw-bold">
-                  <a href="https://twitter.com">firstname lastname</a>
+                  <a href="https://twitter.com">
+                    {tweet.author.firstname} {tweet.author.lastname}
+                  </a>
                 </span>
-                <span className="text-muted"> @username · createdAt</span>
+                <span className="text-muted">
+                  {" "}
+                  @{tweet.author.username} · {tweet.createdAt}
+                </span>
               </Col>
               <Col md={1} className="flex-row-reverse">
                 <a href="https://twitter.com">
