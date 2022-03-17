@@ -1,16 +1,35 @@
 import "./TweetList.css";
 import { useSelector } from "react-redux";
 import { Row, Col, Image } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import axios from "axios";
+import actions from "../redux/tweetActions";
+import { useEffect } from "react";
 
 function TweetList() {
   const tweetList = useSelector((state) => state.tweets);
+  const token = useSelector((state) => state.users[0].token);
+  const dispatch = useDispatch();
+
+  const getTweets = async () => {
+    try {
+      const response = await axios.get(
+        process.env.REACT_APP_API_URL + "/tweets",
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      dispatch(actions.randomlist(response.data.last100Tweets));
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getTweets();
+  }, []);
 
   return tweetList.map((tweet) => (
-    <Row
-      className="mx-1 tweet bg-black text-light"
-      key={tweet.id}
-      onClick={console.log("hola")}
-    >
+    <Row className="mx-1 tweet bg-black text-light" key={tweet._id}>
       <Col className="border-bottom">
         <div className="d-flex pt-3 justify-content-center">
           <div>
