@@ -5,6 +5,7 @@ import User from "./pages/User";
 import Welcome from "./pages/Welcome";
 import { useSelector } from "react-redux";
 import PrivateRoute from "./components/PrivateRoute";
+import UserForm from "./components/UserForm";
 
 function App() {
   const username = useSelector((state) => state.users[0]);
@@ -19,6 +20,7 @@ function App() {
           element={<PrivateRoute element={<User />} />}
         />
         <Route path="/login" element={<Welcome />} />
+        <Route path="/register" element={<UserForm />} />
       </Routes>
     </div>
   );
