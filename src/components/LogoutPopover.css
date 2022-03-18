@@ -1,0 +1,17 @@
+.botonModal :hover {
+  border-color: #1da1f2;
+  border-radius: 30px;
+  box-shadow: inset;
+}
+
+.botonModal {
+  border-color: #1da1f2;
+  border-radius: 30px;
+  width: 280px;
+  font-size: 13px;
+  margin-left: -15px;
+}
+
+.imagenLogOut {
+  margin-top: 2px;
+}

@@ -37,7 +37,7 @@ function Tweet({ tweet }) {
 
   return (
     <Row className="mx-1 tweet bg-black text-light border-bottom">
-      <Col lg={2} className="mx-0 px-0 pt-3">
+      <Col xs={2} sm={2} md={2} lg={2} className="mx-0 px-0 pt-3">
         <Image
           src={tweet.author.avatar}
           alt="Avatar"

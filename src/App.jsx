@@ -6,6 +6,7 @@ import Welcome from "./pages/Welcome";
 import { useSelector } from "react-redux";
 import PrivateRoute from "./components/PrivateRoute";
 import UserForm from "./components/UserForm";
+import "./components/LogoutPopover.css";
 
 function App() {
   const username = useSelector((state) => state.users[0]);

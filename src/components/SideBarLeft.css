@@ -88,3 +88,8 @@
   width: 100px;
   height: 100px;
 }
+@media (max-width: 991.98px) {
+  .marginimg {
+    margin: 10px;
+  }
+}

@@ -10,7 +10,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import actions from "../redux/userActions";
 import axios from "axios";
-
 function LogoutPopover() {
   const sessionData = useSelector((state) => state.users[0]);
   const dispatch = useDispatch();
@@ -33,7 +32,7 @@ function LogoutPopover() {
   };
 
   const popover = (
-    <Popover id="popover-basic">
+    <Popover id="popover-basic " className="">
       <Popover.Header as="h3">img firstname lastname username</Popover.Header>
       <Popover.Body>
         <Link to="/logout" onClick={handleLogout}>
@@ -46,19 +45,22 @@ function LogoutPopover() {
   return (
     <>
       <OverlayTrigger trigger="click" placement="top" overlay={popover}>
-        <Button variant="black" className="mt-5 text-light rounded-pill">
+        <Button
+          variant="black"
+          className="botonModal mt-5 text-light rounded-pill"
+        >
           <Row>
             <Col>
               <Image
                 src={sessionData.avatar}
                 alt="Avatar"
                 roundedCircle={true}
-                className="profile-avatar"
+                className="profile-avatar imagenLogOut"
               />
             </Col>
             <Col>
               {sessionData.firstname} {sessionData.lastname}
-              <span className="text-muted">@{sessionData.username}</span>
+              <span className="">@{sessionData.username}</span>
             </Col>
             <Col>...</Col>
           </Row>
