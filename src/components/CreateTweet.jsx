@@ -6,27 +6,35 @@ import { useDispatch } from "react-redux";
 import actions from "../redux/tweetActions";
 
 function CreateTweet() {
-  const [newTweet, setNewTweet] = useState("");
-  // const dispatch = useDispatch();
+  const [newTweetContent, setNewTweetContent] = useState("");
+  const dispatch = useDispatch();
   const sessionData = useSelector((state) => state.users[0]);
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
-    if (!newTweet) return;
-    // llamada
-    console.log(sessionData);
+    if (!newTweetContent) return;
+    const tweetData = {
+      content: newTweetContent,
+      author: {
+        username: sessionData.username,
+        firstname: sessionData.firstname,
+        lastname: sessionData.lastname,
+        avatar: sessionData.avatar,
+      },
+    };
     try {
       const response = await axios.post(
         process.env.REACT_APP_API_URL + "/tweets",
-        { data: { content: newTweet } },
+        tweetData,
         { headers: { Authorization: `Bearer ${sessionData.token}` } }
       );
       console.log(response.data);
-      // dispatch(actions.create(newTweet));
+      console.log(tweetData);
+      dispatch(actions.create(tweetData));
     } catch (error) {
       console.log(error);
     }
-    setNewTweet("");
+    setNewTweetContent("");
   };
 
   return (
@@ -41,8 +49,8 @@ function CreateTweet() {
             style={{ height: "8rem" }}
             className="bg-black text-light"
             placeholder="What's happening?"
-            value={newTweet}
-            onChange={(e) => setNewTweet(e.target.value)}
+            value={newTweetContent}
+            onChange={(e) => setNewTweetContent(e.target.value)}
           />
           <Button
             variant="primary"
