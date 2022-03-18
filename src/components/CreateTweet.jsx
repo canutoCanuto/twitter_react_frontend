@@ -28,8 +28,6 @@ function CreateTweet() {
         tweetData,
         { headers: { Authorization: `Bearer ${sessionData.token}` } }
       );
-      console.log(response.data);
-      console.log(tweetData);
       dispatch(actions.create(tweetData));
     } catch (error) {
       console.log(error);
