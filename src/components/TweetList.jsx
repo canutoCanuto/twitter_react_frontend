@@ -11,23 +11,23 @@ function TweetList() {
   const dispatch = useDispatch();
 
   const getTweets = async () => {
-    if (tweetList !== []) return;
     try {
       const response = await axios.get(
         process.env.REACT_APP_API_URL + "/tweets",
         { headers: { Authorization: `Bearer ${token}` } }
       );
-      dispatch(actions.randomlist(response.data.last100Tweets));
+      dispatch(actions.randomList(response.data.last100Tweets));
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
+    dispatch(actions.clearRandomList());
     getTweets();
   }, []);
 
-  return tweetList.map((tweet) => <Tweet tweet={tweet} />);
+  return tweetList.map((tweet) => <Tweet tweet={tweet} key={tweet._id} />);
 }
 
 export default TweetList;
