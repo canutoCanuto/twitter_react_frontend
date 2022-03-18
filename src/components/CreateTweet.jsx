@@ -15,6 +15,7 @@ function CreateTweet() {
     if (!newTweetContent) return;
     const tweetData = {
       content: newTweetContent,
+      likes: [],
       author: {
         username: sessionData.username,
         firstname: sessionData.firstname,

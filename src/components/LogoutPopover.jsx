@@ -6,15 +6,25 @@ import {
   Image,
   Row,
 } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 function LogoutPopover() {
   const sessionData = useSelector((state) => state.users[0]);
+  const dispatch = useDispatch();
+
+  const handleLogout = async (ev) => {
+    ev.preventDefault();
+  };
 
   const popover = (
     <Popover id="popover-basic">
       <Popover.Header as="h3">img firstname lastname username</Popover.Header>
-      <Popover.Body>Log out @username</Popover.Body>
+      <Popover.Body>
+        <Link to="/logout" onClick={handleLogout}>
+          Log out @{sessionData.username}
+        </Link>
+      </Popover.Body>
     </Popover>
   );
 
