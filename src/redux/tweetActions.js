@@ -8,6 +8,9 @@ const actions = {
   clearRandomList: () => {
     return { type: "CLEAR_RANDOM_TWEETS" };
   },
+  like: (tweet) => {
+    return { type: "UPDATE_LIKE" };
+  },
 };
 
 export default actions;

@@ -7,7 +7,16 @@ function tweetReducer(state = [], action) {
       return [...state, ...action.payload];
 
     case "CLEAR_RANDOM_TWEETS":
-      return (state = []);
+      return [];
+
+    case "UPDATE_LIKE":
+      return state.map((tweet) => {
+        if (tweet.id === action.payload.id) {
+          return action.payload;
+        } else {
+          return tweet;
+        }
+      });
 
     default:
       return state;

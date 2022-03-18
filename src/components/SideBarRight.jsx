@@ -22,9 +22,7 @@ function Widgets() {
           <Link to="#" className=" list-group-item-action rounded-3 mb-3 ">
             <div className="d-flex w-100 justify-content-between ">
               <small className="mb-1">Tendencias en Uruguay</small>
-              <Link to="#" className="text-muted">
-                ...
-              </Link>
+              <span className="text-muted">...</span>
             </div>
             <div className="text-start">
               <p className="mb-1 pcolor">Hack Academy</p>
@@ -34,9 +32,7 @@ function Widgets() {
           <Link to="#" className=" list-group-item-action  rounded-3 mb-3">
             <div className="d-flex w-100 justify-content-between ">
               <small className="mb-1">Tendencias en Uruguay</small>
-              <Link to="#" className="text-muted">
-                ...
-              </Link>
+              <span className="text-muted">...</span>
             </div>
             <div className="text-start">
               <p className="mb-1 pcolor">WhatsApp</p>
@@ -46,9 +42,7 @@ function Widgets() {
           <Link to="#" className=" list-group-item-action rounded-3 mb-3">
             <div className="d-flex w-100 justify-content-between ">
               <small className="mb-1">Tendencias en Uruguay</small>
-              <Link to="#" className="text-muted">
-                ...
-              </Link>
+              <span className="text-muted">...</span>
             </div>
             <div className="text-start">
               <p className="mb-1 pcolor">ANCAP</p>
@@ -58,9 +52,7 @@ function Widgets() {
           <Link to="#" className=" list-group-item-action rounded-3 mb-3">
             <div className="d-flex w-100 justify-content-between ">
               <small className="mb-1">Tendencias en Uruguay</small>
-              <Link to="#" className="text-muted">
-                ...
-              </Link>
+              <span className="text-muted">...</span>
             </div>
             <div className="text-start">
               <p className="mb-1 pcolor">Grupo 9</p>
