@@ -21,7 +21,7 @@ function LogoutPopover() {
   return (
     <>
       <OverlayTrigger trigger="click" placement="top" overlay={popover}>
-        <Button variant="black" className="mt-5 text-light">
+        <Button variant="black" className="mt-5 text-light rounded-pill">
           <Row>
             <Col>
               <Image
@@ -31,7 +31,10 @@ function LogoutPopover() {
                 className="profile-avatar"
               />
             </Col>
-            <Col>firstname lastname username</Col>
+            <Col>
+              {sessionData.firstname} {sessionData.lastname}
+              <span className="text-muted">@{sessionData.username}</span>
+            </Col>
             <Col>...</Col>
           </Row>
         </Button>

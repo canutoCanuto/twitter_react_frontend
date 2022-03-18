@@ -16,7 +16,7 @@ function App() {
         <Route path="/" element={<Welcome />} />
         <Route path="/home" element={<PrivateRoute element={<Home />} />} />
         <Route
-          path="/user/:username"
+          path="/users/:username"
           element={<PrivateRoute element={<User />} />}
         />
         <Route path="/login" element={<Welcome />} />
