@@ -9,7 +9,7 @@ const actions = {
     return { type: "CLEAR_RANDOM_TWEETS" };
   },
   like: (tweet) => {
-    return { type: "UPDATE_LIKE" };
+    return { type: "UPDATE_LIKE", payload: tweet };
   },
 
   getUserTweets: (tweetsData) => {

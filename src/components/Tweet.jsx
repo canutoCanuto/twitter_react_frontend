@@ -12,8 +12,8 @@ function Tweet({ tweet }) {
   const [like, setLike] = useState(false);
   const dispatch = useDispatch();
   useEffect(() => {
-    if (tweet.likes.includes(sessionData.id)) {
-      setLike((prev) => true);
+    if (tweet.likes.some((like) => like.id === sessionData.id)) {
+      setLike(true);
     }
   }, []);
 
