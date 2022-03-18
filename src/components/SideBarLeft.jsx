@@ -1,11 +1,12 @@
 import React from "react";
-import { Button, Modal, Form, Row, Col } from "react-bootstrap";
+import { Button, Modal, Form, Row, Col, Image } from "react-bootstrap";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import actions from "../redux/tweetActions";
 import axios from "axios";
 import "./SideBarLeft.css";
 import { Link } from "react-router-dom";
+import LogoutPopover from "./LogoutPopover";
 
 function SideBarL() {
   const [newTweetContent, setNewTweetContent] = useState("");
@@ -46,10 +47,10 @@ function SideBarL() {
   };
 
   return (
-    <div className="sidebar-left-container">
+    <div className="sidebar-left-container sticky-top">
       <Link to="/home">
         <div
-          className="div-container p-2 rounded-pill mt-2 mb-3"
+          className="div-container px-2 pt-1 rounded-pill mt-2 mb-3"
           id="home-icon"
         >
           <div className="icon-container">
@@ -61,7 +62,7 @@ function SideBarL() {
       </Link>
 
       <Link to="/home">
-        <div className="div-container p-2 rounded-pill">
+        <div className="div-container px-2 pt-1 rounded-pill">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="logo">
               <g>
@@ -69,14 +70,14 @@ function SideBarL() {
               </g>
             </svg>
           </div>
-          <div className="centered px-1 fs-2 mb-2  d-none d-md-block ">
+          <div className="centered px-3 fs-2 mb-2  d-none d-md-block ">
             <span className="div-container-text ">Home</span>
           </div>
         </div>
       </Link>
 
       <Link to="/home" className="">
-        <div className="div-container p-2 rounded-pill">
+        <div className="div-container px-2 pt-1 rounded-pill">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="logo">
               <g>
@@ -84,14 +85,14 @@ function SideBarL() {
               </g>
             </svg>
           </div>
-          <div className="centered px-1 fs-2 mb-2 d-none d-md-block">
+          <div className="centered px-3 fs-2 mb-2 d-none d-md-block">
             <span className="div-container-text">Explore</span>
           </div>
         </div>
       </Link>
 
       <Link to="/home" className="">
-        <div className="div-container p-2 rounded-pill">
+        <div className="div-container px-2 pt-1 rounded-pill">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="logo">
               <g>
@@ -99,14 +100,14 @@ function SideBarL() {
               </g>
             </svg>
           </div>
-          <div className="centered px-1 fs-2 mb-2 d-none d-md-block">
+          <div className="centered px-3 fs-2 mb-2 d-none d-md-block">
             <span className="div-container-text">Notifications</span>
           </div>
         </div>
       </Link>
 
       <Link to="/home" className="">
-        <div className="div-container p-2 rounded-pill">
+        <div className="div-container px-2 pt-1 rounded-pill">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="logo">
               <g>
@@ -114,13 +115,13 @@ function SideBarL() {
               </g>
             </svg>
           </div>
-          <div className="centered px-1 fs-2 mb-2 d-none d-md-block">
+          <div className="centered px-3 fs-2 mb-2 d-none d-md-block">
             <span className="div-container-text">Messages</span>
           </div>
         </div>
       </Link>
       <Link to="/home" className="">
-        <div className="div-container p-2 rounded-pill">
+        <div className="div-container px-2 pt-1 rounded-pill">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="logo">
               <g>
@@ -128,13 +129,13 @@ function SideBarL() {
               </g>
             </svg>
           </div>
-          <div className="centered px-1 fs-2 mb-2 d-none d-md-block">
+          <div className="centered px-3 fs-2 mb-2 d-none d-md-block">
             <span className="div-container-text">Bookmarks</span>
           </div>
         </div>
       </Link>
       <Link to="/home" className="">
-        <div className="div-container p-2 rounded-pill">
+        <div className="div-container px-2 pt-1 rounded-pill">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="logo">
               <g>
@@ -143,13 +144,13 @@ function SideBarL() {
               </g>
             </svg>
           </div>
-          <div className="centered px-1 fs-2 mb-2 d-none d-md-block">
+          <div className="centered px-3 fs-2 mb-2 d-none d-md-block">
             <span className="div-container-text">Lists</span>
           </div>
         </div>
       </Link>
       <Link to={`/user/${sessionData.username}`} className="">
-        <div className="div-container p-2 rounded-pill">
+        <div className="div-container px-2 pt-1 rounded-pill">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="logo">
               <g>
@@ -157,13 +158,13 @@ function SideBarL() {
               </g>
             </svg>
           </div>
-          <div className="centered px-1 fs-2 mb-2 d-none d-md-block">
+          <div className="centered px-3 fs-2 mb-2 d-none d-md-block">
             <span className="div-container-text">Profile</span>
           </div>
         </div>
       </Link>
       <Link to="/home" className="">
-        <div className="div-container p-2 rounded-pill">
+        <div className="div-container px-2 pt-1 rounded-pill">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="logo">
               <g>
@@ -174,7 +175,7 @@ function SideBarL() {
               </g>
             </svg>
           </div>
-          <div className="centered px-1 fs-2 mb-2 d-none d-md-block">
+          <div className="centered px-3 fs-2 mb-2 d-none d-md-block">
             <span className="div-container-text">More</span>
           </div>
         </div>
@@ -203,7 +204,12 @@ function SideBarL() {
           ></button>
           <Row className="pt-2">
             <Col sm={2}>
-              <img src="" alt="Avatar" />
+              <Image
+                src={sessionData.avatar}
+                alt="Avatar"
+                className="profile-avatar"
+                roundedCircle={true}
+              />
             </Col>
             <Col>
               <Form>
@@ -227,6 +233,8 @@ function SideBarL() {
           </Row>
         </Modal.Body>
       </Modal>
+
+      <LogoutPopover />
     </div>
   );
 }
