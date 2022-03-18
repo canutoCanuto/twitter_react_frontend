@@ -32,13 +32,27 @@ function LogoutPopover() {
   };
 
   const popover = (
-    <Popover id="popover-basic " className="">
-      <Popover.Header as="h3">img firstname lastname username</Popover.Header>
-      <Popover.Body>
-        <Link to="/logout" onClick={handleLogout}>
+    <Popover id="popover-basic">
+      <Popover.Header
+        as="h3"
+        className="bg-black text-light d-flex align-items-center"
+      >
+        <Image
+          src={sessionData.avatar}
+          alt="Avatar"
+          roundedCircle={true}
+          className="profile-avatar imagenLogOut"
+        />
+        <div className="ps-2">
+          {sessionData.firstname} {sessionData.lastname}{" "}
+          <span className="text-muted">@{sessionData.username}</span>
+        </div>
+      </Popover.Header>
+      <Link to="/logout" onClick={handleLogout}>
+        <Popover.Body className=" bg-black text-light">
           Log out @{sessionData.username}
-        </Link>
-      </Popover.Body>
+        </Popover.Body>
+      </Link>
     </Popover>
   );
 
@@ -47,23 +61,20 @@ function LogoutPopover() {
       <OverlayTrigger trigger="click" placement="top" overlay={popover}>
         <Button
           variant="black"
-          className="botonModal mt-5 text-light rounded-pill"
+          className="botonModal mt-5 text-light rounded-pill d-flex align-items-center"
         >
-          <Row>
-            <Col>
-              <Image
-                src={sessionData.avatar}
-                alt="Avatar"
-                roundedCircle={true}
-                className="profile-avatar imagenLogOut"
-              />
-            </Col>
-            <Col>
-              {sessionData.firstname} {sessionData.lastname}
-              <span className="">@{sessionData.username}</span>
-            </Col>
-            <Col>...</Col>
-          </Row>
+          <Image
+            src={sessionData.avatar}
+            alt="Avatar"
+            roundedCircle={true}
+            className="profile-avatar imagenLogOut"
+          />
+
+          <div className="ps-2">
+            {sessionData.firstname} {sessionData.lastname}
+            <span className="text-muted"> @{sessionData.username}</span>
+          </div>
+          <div className="ps-2">...</div>
         </Button>
       </OverlayTrigger>
     </>
