@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import actions from "../redux/tweetActions";
 import axios from "axios";
 import "./SideBarLeft.css";
+import { Link } from "react-router-dom";
 
 function SideBarL() {
   const [newTweetContent, setNewTweetContent] = useState("");
@@ -46,7 +47,7 @@ function SideBarL() {
 
   return (
     <div className="sidebar-left-container">
-      <a href="/home">
+      <Link to="/home">
         <div
           className="div-container p-2 rounded-pill mt-2 mb-3"
           id="home-icon"
@@ -57,9 +58,9 @@ function SideBarL() {
             </svg>
           </div>
         </div>
-      </a>
+      </Link>
 
-      <a href="/home">
+      <Link to="/home">
         <div className="div-container p-2 rounded-pill">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="logo">
@@ -72,9 +73,9 @@ function SideBarL() {
             <span className="div-container-text ">Home</span>
           </div>
         </div>
-      </a>
+      </Link>
 
-      <a href="/home" className="">
+      <Link to="/home" className="">
         <div className="div-container p-2 rounded-pill">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="logo">
@@ -87,9 +88,9 @@ function SideBarL() {
             <span className="div-container-text">Explore</span>
           </div>
         </div>
-      </a>
+      </Link>
 
-      <a href="/home" className="">
+      <Link to="/home" className="">
         <div className="div-container p-2 rounded-pill">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="logo">
@@ -102,9 +103,9 @@ function SideBarL() {
             <span className="div-container-text">Notifications</span>
           </div>
         </div>
-      </a>
+      </Link>
 
-      <a href="/home" className="">
+      <Link to="/home" className="">
         <div className="div-container p-2 rounded-pill">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="logo">
@@ -117,8 +118,8 @@ function SideBarL() {
             <span className="div-container-text">Messages</span>
           </div>
         </div>
-      </a>
-      <a href="/home" className="">
+      </Link>
+      <Link to="/home" className="">
         <div className="div-container p-2 rounded-pill">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="logo">
@@ -131,8 +132,8 @@ function SideBarL() {
             <span className="div-container-text">Bookmarks</span>
           </div>
         </div>
-      </a>
-      <a href="/home" className="">
+      </Link>
+      <Link to="/home" className="">
         <div className="div-container p-2 rounded-pill">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="logo">
@@ -146,8 +147,8 @@ function SideBarL() {
             <span className="div-container-text">Lists</span>
           </div>
         </div>
-      </a>
-      <a href={`/user/${sessionData.username}`} className="">
+      </Link>
+      <Link to={`/user/${sessionData.username}`} className="">
         <div className="div-container p-2 rounded-pill">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="logo">
@@ -160,8 +161,8 @@ function SideBarL() {
             <span className="div-container-text">Profile</span>
           </div>
         </div>
-      </a>
-      <a href="/home" className="">
+      </Link>
+      <Link to="/home" className="">
         <div className="div-container p-2 rounded-pill">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="logo">
@@ -177,7 +178,7 @@ function SideBarL() {
             <span className="div-container-text">More</span>
           </div>
         </div>
-      </a>
+      </Link>
       <div className="centered px-1 fs-2">
         <button
           className="btn rounded-pill btn-tweet py-2"
