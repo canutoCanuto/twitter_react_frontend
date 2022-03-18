@@ -36,10 +36,10 @@ function User() {
   return (
     <Container>
       <Row>
-        <Col xs={2} sm={2} md={3} lg={2}>
+        <Col xs={2} sm={2} md={3} lg={3}>
           <SideBarLeft />
         </Col>
-        <Col xs={10} sm={10} md={9} lg={6}>
+        <Col xs={10} sm={10} md={9} lg={5} className="ps-4 contenedorProfile">
           <div className="row mx-1 sticky-top bg-black text-light pt-2">
             <div className="col-1 p-3">
               <a href="/home">
@@ -52,29 +52,26 @@ function User() {
                 </svg>
               </a>
             </div>
-            <div className="col-11">
-              <p className="fw-bold fs-4 mb-0 text-light text-start">
-                {postUser.firstname}
-              </p>
-              <p className="text-muted mb-1 text-start">
-                {tweetList.length < 2
-                  ? tweetList.length + " Tweet"
-                  : tweetList.length + " Tweets"}
-              </p>
-            </div>
           </div>
           <div className="row mx-1 bg-black text-light border-bottom ">
-            <div className="col-5 mb-5">
+            <div className="col-7 mb-5 divfotoperfil">
               <img
                 src={postUser.avatar}
                 alt="Avatar"
-                className="rounded-circle border border-dark w-50 h-50"
+                className="profileimage w-50 h-50 img-fluid"
               />
               <p className="fw-bold fs-4 mb-0 text-light text-start">
                 {postUser.firstname} {postUser.lastname}
               </p>
-              <p className="text-muted text-start">@{postUser.username}</p>
-              <p className="">
+              <p className="text-muted text-start mb-1">@{postUser.username}</p>
+              <div className="col-11">
+                <p className="text-muted mb-1 text-start">
+                  {tweetList.length < 2
+                    ? tweetList.length + " Tweet"
+                    : tweetList.length + " Tweets"}
+                </p>
+              </div>
+              <p className="text-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 448 512"
@@ -84,7 +81,7 @@ function User() {
                 </svg>
                 <span className="text-muted"> Joined {joinedDate}</span>
               </p>
-              <p className="text-light">
+              <p className="text-light text-start">
                 {postUser.following ? postUser.following.length : 0}
                 <span className="text-muted me-2">Following </span>
                 {postUser.followers ? postUser.followers.length : 0}
@@ -92,9 +89,11 @@ function User() {
               </p>
             </div>
           </div>
-          {tweetList
-            .map((tweet) => <TweetProfile user={postUser} tweet={tweet} />)
-            .reverse()}
+          <div className="mt-4">
+            {tweetList
+              .map((tweet) => <TweetProfile user={postUser} tweet={tweet} />)
+              .reverse()}
+          </div>
         </Col>
         <Col lg={4}>
           <SideBarRight />
