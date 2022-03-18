@@ -147,7 +147,7 @@ function SideBarL() {
           </div>
         </div>
       </a>
-      <a href="/user" className="">
+      <a href={`/user/${sessionData.username}`} className="">
         <div className="div-container p-2 rounded-pill">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" aria-hidden="true" className="logo">
