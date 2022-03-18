@@ -8,6 +8,9 @@ const actions = {
   clearRandomList: () => {
     return { type: "CLEAR_RANDOM_TWEETS" };
   },
+  getUserTweets: (tweetsData) => {
+    return { type: "GET_USER_TWEETS", payload: tweetsData };
+  },
 };
 
 export default actions;

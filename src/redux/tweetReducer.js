@@ -8,7 +8,8 @@ function tweetReducer(state = [], action) {
 
     case "CLEAR_RANDOM_TWEETS":
       return (state = []);
-
+    case "GET_USER_TWEETS":
+      return (state = [...action.payload]);
     default:
       return state;
   }
