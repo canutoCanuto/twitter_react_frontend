@@ -9,26 +9,19 @@ import actions from "../redux/tweetActions";
 
 function Tweet({ tweet }) {
   const sessionData = useSelector((state) => state.users[0]);
-  const [like, setLike] = useState(false);
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (tweet.likes.includes(sessionData.id)) {
-      setLike(true);
-    }
-  }, []);
+  const dispatch = useDispatch();
 
   const submitLike = async () => {
     try {
-      setLike((prev) => !prev);
       console.log("LIKE ", tweet.id);
+
       const response = await axios({
         url: process.env.REACT_APP_API_URL + `/tweets/${tweet.id}/likes`,
         method: "POST",
         headers: { Authorization: `Bearer ${sessionData.token}` },
       });
       const upDatedTweet = response.data.upDatedTweet;
-
       dispatch(actions.like(upDatedTweet));
     } catch (error) {
       console.log(error);
@@ -98,7 +91,7 @@ function Tweet({ tweet }) {
               </Col>
               <Col>
                 <span onClick={() => submitLike()}>
-                  {!like ? (
+                  {!tweet.likes.includes(sessionData.id) ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 512 512"

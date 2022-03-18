@@ -8,8 +8,6 @@ import PrivateRoute from "./components/PrivateRoute";
 import UserForm from "./components/UserForm";
 
 function App() {
-  const username = useSelector((state) => state.users[0]);
-  console.log(username);
   return (
     <div className="app">
       <Routes>

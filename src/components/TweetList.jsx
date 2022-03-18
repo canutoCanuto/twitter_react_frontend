@@ -28,7 +28,7 @@ function TweetList() {
   }, []);
 
   return tweetList
-    .map((tweet) => <Tweet tweet={tweet} key={tweet._id} />)
+    .map((tweet) => <Tweet tweet={tweet} key={tweet.id} />)
     .reverse();
 }
 
