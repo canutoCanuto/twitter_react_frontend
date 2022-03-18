@@ -1,13 +1,15 @@
 import { Button, Modal, Form } from "react-bootstrap";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import actions from "../redux/userActions";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
 function Login() {
   const [show, setShow] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -25,14 +27,14 @@ function Login() {
         }
       );
       dispatch(actions.login(response.data));
+      navigate("/home");
     } catch (error) {
       console.log(error);
     }
   };
-
   return (
     <div>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary" className="botonlogin" onClick={handleShow}>
         Log In
       </Button>
       <Modal

@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 function PrivateRoute({ element, ...rest }) {
   const user = useSelector((state) => state.users[0]);
   if (!user) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/welcome" />;
   } else {
     return element;
   }

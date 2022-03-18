@@ -17,15 +17,15 @@
   left: 0;
   border-radius: 0px;
 }
+
 .absolutimg {
   fill: white;
   position: absolute;
   display: block;
-  left: -100px;
-  top: 50px;
-  width: 80%;
-  height: 80%;
-  border-radius: 0px;
+  left: 150px;
+  top: 180px;
+  width: 30%;
+  height: 30%;
 }
 .containerright {
   background-color: black;
@@ -34,14 +34,17 @@
 
   position: relative;
 }
-
+.separador {
+  color: white;
+}
 .title1 {
   text-align: start;
   color: white;
-  font-size: 50px;
+  font-size: 70px;
   margin-bottom: 50px;
 }
 .title2 {
+  text-align: start;
   color: white;
   font-size: 30px;
   margin-bottom: 60px;
@@ -67,9 +70,6 @@ a:link {
 }
 a:hover {
   text-decoration: underline;
-}
-
-.btniniciarsesion {
 }
 
 .applebutton {
@@ -134,4 +134,10 @@ a:hover {
   padding: 9px 76px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #ffffff;
+}
+.botonlogin {
+  width: 400px;
+  border-radius: 28px;
+  background-color: black;
+  border-color: grey;
 }
