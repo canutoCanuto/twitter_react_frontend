@@ -7,7 +7,6 @@ import axios from "axios";
 import TweetProfile from "../components/TweetProfile";
 
 function User() {
-  const tweetList = useSelector((state) => state.tweets);
   const user = useSelector((state) => state.users[0].username);
   const token = useSelector((state) => state.users[0].token);
   const [tweets, setTweets] = useState([]);
@@ -31,7 +30,7 @@ function User() {
   };
   useEffect(() => {
     getProfileTweets();
-  }, []);
+  }, [user]);
   return (
     <Container>
       <Row>
@@ -90,8 +89,9 @@ function User() {
               </p>
             </div>
           </div>
-
-          <TweetProfile user={postUser} tweet={tweets} />
+          {tweets.map((tweet) => (
+            <TweetProfile user={postUser} tweet={tweet} />
+          ))}
         </Col>
         <Col lg={4}>
           <SideBarRight />
