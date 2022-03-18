@@ -1,11 +1,12 @@
 import React from "react";
 import "./SideBarRight.css";
-import {
-  TwitterTimelineEmbed,
-  TwitterShareButton,
-  TwitterTweetEmbed,
-} from "react-twitter-embed";
+// import {
+//   TwitterTimelineEmbed,
+//   TwitterShareButton,
+//   TwitterTweetEmbed,
+// } from "react-twitter-embed";
 import SearchIcon from "@material-ui/icons/Search";
+import { Link } from "react-router-dom";
 
 function Widgets() {
   return (
@@ -18,46 +19,54 @@ function Widgets() {
 
         <div className="widgets__widgetContainer list-group  whastHapp">
           <h2 className="tituloSideBar">What's happening</h2>
-          <a href="#" className=" list-group-item-action rounded-3 mb-3 ">
+          <Link to="#" className=" list-group-item-action rounded-3 mb-3 ">
             <div className="d-flex w-100 justify-content-between ">
               <small className="mb-1">Tendencias en Uruguay</small>
-              <a className="text-muted">...</a>
+              <Link to="#" className="text-muted">
+                ...
+              </Link>
             </div>
             <div className="text-start">
               <p className="mb-1 pcolor">Hack Academy</p>
               <small className="mb-1 ">1.000.000 Tweets</small>
             </div>
-          </a>
-          <a href="#" className=" list-group-item-action  rounded-3 mb-3">
+          </Link>
+          <Link to="#" className=" list-group-item-action  rounded-3 mb-3">
             <div className="d-flex w-100 justify-content-between ">
               <small className="mb-1">Tendencias en Uruguay</small>
-              <a className="text-muted">...</a>
+              <Link to="#" className="text-muted">
+                ...
+              </Link>
             </div>
             <div className="text-start">
               <p className="mb-1 pcolor">WhatsApp</p>
               <small className="mb-1 ">1.298 Tweets</small>
             </div>
-          </a>
-          <a href="#" className=" list-group-item-action rounded-3 mb-3">
+          </Link>
+          <Link to="#" className=" list-group-item-action rounded-3 mb-3">
             <div className="d-flex w-100 justify-content-between ">
               <small className="mb-1">Tendencias en Uruguay</small>
-              <a className="text-muted">...</a>
+              <Link to="#" className="text-muted">
+                ...
+              </Link>
             </div>
             <div className="text-start">
               <p className="mb-1 pcolor">ANCAP</p>
               <small className="mb-1 ">1 Tweets</small>
             </div>
-          </a>
-          <a href="#" className=" list-group-item-action rounded-3 mb-3">
+          </Link>
+          <Link to="#" className=" list-group-item-action rounded-3 mb-3">
             <div className="d-flex w-100 justify-content-between ">
               <small className="mb-1">Tendencias en Uruguay</small>
-              <a className="text-muted">...</a>
+              <Link to="#" className="text-muted">
+                ...
+              </Link>
             </div>
             <div className="text-start">
               <p className="mb-1 pcolor">Grupo 9</p>
               <small className="mb-1 ">10 Tweets</small>
             </div>
-          </a>
+          </Link>
         </div>
 
         <div className="widgets__widgetContainer">
@@ -86,11 +95,11 @@ function Widgets() {
                 </p>
               </div>
               <div className="col ms-3 mt-3 w-25 ">
-                <a href="">
+                <Link to="#">
                   <button className="btn btn-primary rounded-pill px-3 py-0  pcolor">
                     Follow
                   </button>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -118,11 +127,11 @@ function Widgets() {
                 </p>
               </div>
               <div className="col ms-3 mt-3 w-25 ">
-                <a href="">
+                <Link to="#">
                   <button className="btn btn-primary rounded-pill px-3 py-0 pcolor">
                     Follow
                   </button>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -150,11 +159,11 @@ function Widgets() {
                 </p>
               </div>
               <div className="col ms-3 mt-3 w-25 ">
-                <a href="">
+                <Link to="#">
                   <button className="btn btn-primary rounded-pill px-3 py-0 pcolor">
                     Follow
                   </button>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -186,11 +195,11 @@ function Widgets() {
                 </p>
               </div>
               <div className="col ms-3 mt-3 w-25 ">
-                <a href="">
+                <Link to="#">
                   <button className="btn btn-primary rounded-pill px-3 py-0  ">
                     Follow
                   </button>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -218,11 +227,11 @@ function Widgets() {
                 </p>
               </div>
               <div className="col ms-3 mt-3 w-25 ">
-                <a href="">
+                <Link to="#">
                   <button className="btn btn-primary rounded-pill px-3 py-0 ">
                     Follow
                   </button>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
