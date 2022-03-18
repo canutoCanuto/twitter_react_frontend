@@ -1,36 +1,38 @@
 import SideBarLeft from "../components/SideBarLeft";
 import SideBarRight from "../components/SideBarRight";
-import { Container, Row, Col } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import TweetProfile from "../components/TweetProfile";
+import actions from "../redux/tweetActions";
+import { useEffect, useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import { useSelector, useDispatch } from "react-redux";
+import axios from "axios";
 
 function User() {
-  const user = useSelector((state) => state.users[0].username);
+  const [, , path] = window.location.pathname.split("/");
+  const tweetList = useSelector((state) => state.tweets);
   const token = useSelector((state) => state.users[0].token);
-  const [tweets, setTweets] = useState([]);
+  const dispatch = useDispatch();
   const [postUser, setPostUser] = useState({});
   const [joinedDate, setJoinedDate] = useState("");
 
   const getProfileTweets = async () => {
     try {
       const { data } = await axios.get(
-        process.env.REACT_APP_API_URL + `/users/${user}`,
+        process.env.REACT_APP_API_URL + `/users/${path}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       const { postUser, tweets, formattedDate } = data;
-      setTweets([...tweets]);
+      dispatch(actions.getUserTweets([...tweets]));
+      console.log(data);
       setPostUser({ ...postUser });
       setJoinedDate(formattedDate);
-      console.log(postUser, tweets);
     } catch (error) {
       console.log(error);
     }
   };
   useEffect(() => {
     getProfileTweets();
-  }, [user]);
+  }, []);
   return (
     <Container>
       <Row>
@@ -55,7 +57,9 @@ function User() {
                 {postUser.firstname}
               </p>
               <p className="text-muted mb-1 text-start">
-                {tweets.length < 2 ? tweets.length + " Tweet" : "Tweets"}
+                {tweetList.length < 2
+                  ? tweetList.length + " Tweet"
+                  : tweetList.length + " Tweets"}
               </p>
             </div>
           </div>
@@ -64,13 +68,12 @@ function User() {
               <img
                 src={postUser.avatar}
                 alt="Avatar"
-                // style={{width: 150px; height: 150px}}
                 className="rounded-circle border border-dark w-50 h-50"
               />
               <p className="fw-bold fs-4 mb-0 text-light text-start">
                 {postUser.firstname} {postUser.lastname}
               </p>
-              <p className="text-muted text-start">@{user}</p>
+              <p className="text-muted text-start">@{postUser.username}</p>
               <p className="">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -82,16 +85,16 @@ function User() {
                 <span className="text-muted"> Joined {joinedDate}</span>
               </p>
               <p className="text-light">
-                error
+                {postUser.following ? postUser.following.length : 0}
                 <span className="text-muted me-2">Following </span>
-                error
+                {postUser.followers ? postUser.followers.length : 0}
                 <span className="text-muted">Followers </span>
               </p>
             </div>
           </div>
-          {tweets.map((tweet) => (
-            <TweetProfile user={postUser} tweet={tweet} />
-          ))}
+          {tweetList
+            .map((tweet) => <TweetProfile user={postUser} tweet={tweet} />)
+            .reverse()}
         </Col>
         <Col lg={4}>
           <SideBarRight />

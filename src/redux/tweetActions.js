@@ -11,6 +11,10 @@ const actions = {
   like: (tweet) => {
     return { type: "UPDATE_LIKE" };
   },
+
+  getUserTweets: (tweetsData) => {
+    return { type: "GET_USER_TWEETS", payload: tweetsData };
+  },
 };
 
 export default actions;

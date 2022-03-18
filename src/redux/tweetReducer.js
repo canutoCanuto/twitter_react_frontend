@@ -18,6 +18,8 @@ function tweetReducer(state = [], action) {
         }
       });
 
+    case "GET_USER_TWEETS":
+      return (state = [...action.payload]);
     default:
       return state;
   }

@@ -1,5 +1,5 @@
-.sidebarlefthcontainer {
-}
+/* .sidebarlefthcontainer {
+} */
 
 /*Side Bar styles*/
 
@@ -82,4 +82,9 @@
 }
 .sidebar-left-container .user {
   color: rgb(81, 88, 93);
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
 }
