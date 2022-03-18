@@ -8,10 +8,10 @@ function Home() {
   return (
     <Container>
       <Row>
-        <Col xs={2} sm={2} md={3} lg={2}>
+        <Col xs={2} sm={2} md={3} lg={3}>
           <SideBarLeft />
         </Col>
-        <Col xs={10} sm={10} md={9} lg={6}>
+        <Col xs={10} sm={10} md={9} lg={5}>
           <CreateTweet />
           <TweetList />
         </Col>

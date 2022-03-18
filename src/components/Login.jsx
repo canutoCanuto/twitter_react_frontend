@@ -72,7 +72,7 @@ function Login() {
           <div className="ps-4">
             <div className="modal-body">
               <h5 className="modal-title text-white" id="staticBackdropLabel">
-                Iniciar sesión
+                Login{" "}
               </h5>
             </div>
             <Form onSubmit={handleSubmit}>
@@ -114,14 +114,14 @@ function Login() {
                     type="submit"
                     className="btn btn-secondary rounded-pill text-black"
                   >
-                    Siguiente
+                    Continue
                   </button>
                 </div>
               </div>
             </Form>
 
             <div className="card-footer text-muted">
-              ¿No tienes una cuenta? <a href="/checkin">Regístrate</a>
+              don't have account? <a href="/checkin">Register</a>
             </div>
           </div>
         </Modal.Body>
