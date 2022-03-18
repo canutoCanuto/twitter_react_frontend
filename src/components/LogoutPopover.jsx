@@ -7,14 +7,29 @@ import {
   Row,
 } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import actions from "../redux/userActions";
+import axios from "axios";
 
 function LogoutPopover() {
   const sessionData = useSelector((state) => state.users[0]);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleLogout = async (ev) => {
     ev.preventDefault();
+    try {
+      console.log(sessionData);
+      const response = await axios({
+        url: process.env.REACT_APP_API_URL + `/users/logout`,
+        method: "POST",
+        headers: { Authorization: `Bearer ${sessionData.token}` },
+      });
+      dispatch(actions.logout());
+      navigate("/login");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const popover = (
