@@ -1,24 +1,46 @@
 import React from "react";
 import { Button, Modal, Form, Row, Col } from "react-bootstrap";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import actions from "../redux/tweetActions";
+import axios from "axios";
 import "./SideBarLeft.css";
 
 function SideBarL() {
-  const [newTweet, setNewTweet] = useState("");
+  const [newTweetContent, setNewTweetContent] = useState("");
   const dispatch = useDispatch();
+  const sessionData = useSelector((state) => state.users[0]);
 
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const handleSubmit = (ev) => {
+  const handleSubmit = async (ev) => {
     ev.preventDefault();
-    if (!newTweet) return;
-    dispatch(actions.create(newTweet));
-    setNewTweet("");
+    if (!newTweetContent) return;
+    const tweetData = {
+      content: newTweetContent,
+      author: {
+        username: sessionData.username,
+        firstname: sessionData.firstname,
+        lastname: sessionData.lastname,
+        avatar: sessionData.avatar,
+      },
+    };
+    try {
+      const response = await axios.post(
+        process.env.REACT_APP_API_URL + "/tweets",
+        tweetData,
+        { headers: { Authorization: `Bearer ${sessionData.token}` } }
+      );
+      console.log(response.data);
+      console.log(tweetData);
+      dispatch(actions.create(tweetData));
+    } catch (error) {
+      console.log(error);
+    }
+    setNewTweetContent("");
     setShow(false);
   };
 
@@ -189,8 +211,8 @@ function SideBarL() {
                   style={{ height: "8rem" }}
                   className="bg-black text-light"
                   placeholder="What's happening?"
-                  value={newTweet}
-                  onChange={(e) => setNewTweet(e.target.value)}
+                  value={newTweetContent}
+                  onChange={(e) => setNewTweetContent(e.target.value)}
                 />
                 <Button
                   variant="primary"
