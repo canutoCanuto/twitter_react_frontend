@@ -11,14 +11,16 @@ function Tweet({ tweet }) {
   const sessionData = useSelector((state) => state.users[0]);
   const [like, setLike] = useState(false);
   const dispatch = useDispatch();
+
   useEffect(() => {
-    if (tweet.likes.some((like) => like.id === sessionData.id)) {
+    if (tweet.likes.includes(sessionData.id)) {
       setLike(true);
     }
   }, []);
 
   const submitLike = async () => {
     try {
+      setLike((prev) => !prev);
       console.log("LIKE ", tweet.id);
       const response = await axios({
         url: process.env.REACT_APP_API_URL + `/tweets/${tweet.id}/likes`,
@@ -26,8 +28,8 @@ function Tweet({ tweet }) {
         headers: { Authorization: `Bearer ${sessionData.token}` },
       });
       const upDatedTweet = response.data.upDatedTweet;
+
       dispatch(actions.like(upDatedTweet));
-      setLike((prev) => !like);
     } catch (error) {
       console.log(error);
     }
