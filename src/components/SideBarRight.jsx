@@ -18,10 +18,10 @@ function Widgets() {
         </div>
 
         <div className="widgets__widgetContainer list-group  whastHapp">
-          <h2 className="tituloSideBar">What's happening</h2>
+          <h2 className="tituloSideBar">Trends for you</h2>
           <Link to="#" className=" list-group-item-action rounded-3 mb-3 ">
             <div className="d-flex w-100 justify-content-between ">
-              <small className="mb-1">Tendencias en Uruguay</small>
+              <small className="mb-1">Trending in Uruguay</small>
               <span className="text-muted">...</span>
             </div>
             <div className="text-start">
@@ -31,7 +31,7 @@ function Widgets() {
           </Link>
           <Link to="#" className=" list-group-item-action  rounded-3 mb-3">
             <div className="d-flex w-100 justify-content-between ">
-              <small className="mb-1">Tendencias en Uruguay</small>
+              <small className="mb-1">Trending in Uruguay</small>
               <span className="text-muted">...</span>
             </div>
             <div className="text-start">
@@ -41,7 +41,7 @@ function Widgets() {
           </Link>
           <Link to="#" className=" list-group-item-action rounded-3 mb-3">
             <div className="d-flex w-100 justify-content-between ">
-              <small className="mb-1">Tendencias en Uruguay</small>
+              <small className="mb-1">Trending in Uruguay</small>
               <span className="text-muted">...</span>
             </div>
             <div className="text-start">
@@ -51,7 +51,7 @@ function Widgets() {
           </Link>
           <Link to="#" className=" list-group-item-action rounded-3 mb-3">
             <div className="d-flex w-100 justify-content-between ">
-              <small className="mb-1">Tendencias en Uruguay</small>
+              <small className="mb-1">Trending in Uruguay</small>
               <span className="text-muted">...</span>
             </div>
             <div className="text-start">
