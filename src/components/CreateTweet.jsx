@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Form, Button, Row, Col } from "react-bootstrap";
+import { Form, Button, Row, Col, Image } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import actions from "../redux/tweetActions";
+import "./CreateTweet.css";
 
 function CreateTweet() {
   const [newTweetContent, setNewTweetContent] = useState("");
@@ -39,7 +40,12 @@ function CreateTweet() {
   return (
     <Row className="py-2 bg-black text-light mx-1 border-bottom">
       <Col sm={2}>
-        <img src="" alt="Avatar" />
+        <Image
+          src={sessionData.avatar}
+          alt="Avatar"
+          roundedCircle={true}
+          className="profile-avatar"
+        />
       </Col>
       <Col>
         <Form onSubmit={handleSubmit}>
