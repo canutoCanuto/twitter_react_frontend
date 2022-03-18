@@ -1,6 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import SideBarLeft from "../components/SideBarLeft";
 import SideBarRight from "../components/SideBarRight";
-import TweetProfile from "../components/TweetProfile";
+import Tweet from "../components/Tweet";
 import actions from "../redux/tweetActions";
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
@@ -91,7 +92,7 @@ function User() {
           </div>
           <div className="mt-4">
             {tweetList
-              .map((tweet) => <TweetProfile user={postUser} tweet={tweet} />)
+              .map((tweet) => <Tweet key={tweet.id} tweet={tweet} />)
               .reverse()}
           </div>
         </Col>

@@ -1,5 +1,6 @@
-import React from "react";
 import "./UserForm.css";
+import axios from "axios";
+import { useState } from "react";
 
 import {
   Modal,
@@ -10,13 +11,37 @@ import {
   FloatingLabel,
   Form,
 } from "react-bootstrap";
-import { useState } from "react";
-import { render, screen } from "@testing-library/react";
 
 function UserForm(props) {
   const [show, setShow] = useState(false);
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [exitoRegistro, setExitoRegistro] = useState("");
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleRegister = async () => {
+    try {
+      await axios.post(process.env.REACT_APP_API_URL + "/users", {
+        firstname: name,
+        lastname: surname,
+        username: username,
+        email: email,
+        password: password,
+      });
+      setExitoRegistro("Registro exitoso");
+      setName("");
+      setSurname("");
+      setUsername("");
+      setEmail("");
+      setPassword("");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       <Button className="btn btn-primary " onClick={() => handleShow(true)}>
@@ -49,38 +74,59 @@ function UserForm(props) {
               <Col xs={12} md={8} className="form-floating mb-4 labeltext">
                 <FloatingLabel
                   className="m-3"
-                  controlId="floatingPassword"
+                  controlId="Nombre"
                   label="Nombre"
                 >
-                  <Form.Control type="text" placeholder="Nombre" />
+                  <Form.Control
+                    type="text"
+                    placeholder="Nombre"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
                 </FloatingLabel>
                 <FloatingLabel
                   className="m-3"
-                  controlId="floatingPassword"
+                  controlId="Apellido"
                   label="Apellido"
                 >
-                  <Form.Control type="text" placeholder="Apellido" />
+                  <Form.Control
+                    type="text"
+                    placeholder="Apellido"
+                    value={surname}
+                    onChange={(e) => setSurname(e.target.value)}
+                  />
                 </FloatingLabel>
                 <FloatingLabel
                   className="m-3"
-                  controlId="floatingPassword"
-                  label="Telefono"
+                  controlId="Username"
+                  label="Username"
                 >
-                  <Form.Control type="celphone" placeholder="Telefono" />
+                  <Form.Control
+                    type="text"
+                    placeholder="Username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                  />
+                </FloatingLabel>
+                <FloatingLabel className="m-3" controlId="Email" label="Email">
+                  <Form.Control
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
                 </FloatingLabel>
                 <FloatingLabel
                   className="m-3"
-                  controlId="floatingPassword"
-                  label="Email"
+                  controlId="Password"
+                  label="Password"
                 >
-                  <Form.Control type="text" placeholder="Pasword" />
-                </FloatingLabel>
-                <FloatingLabel
-                  className="m-3"
-                  controlId="floatingPassword"
-                  label="Pasword"
-                >
-                  <Form.Control type="text" placeholder="Nombre" />
+                  <Form.Control
+                    type="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
                 </FloatingLabel>
               </Col>
             </Row>
@@ -139,8 +185,16 @@ function UserForm(props) {
           </Container>
         </Modal.Body>
         <Modal.Footer>
+          <Button onClick={handleRegister}>Registrar</Button>
           <Button onClick={handleClose}>Close</Button>
         </Modal.Footer>
+        {exitoRegistro ? (
+          <p className="bg-success text-center text-light p-2">
+            Registro exitoso!
+          </p>
+        ) : (
+          <p className="bg-danger text-center text-light p-2">Error</p>
+        )}
       </Modal>
     </>
   );
