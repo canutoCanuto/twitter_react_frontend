@@ -24,11 +24,9 @@ function CreateTweet() {
       },
     };
     try {
-      const response = await axios.post(
-        process.env.REACT_APP_API_URL + "/tweets",
-        tweetData,
-        { headers: { Authorization: `Bearer ${sessionData.token}` } }
-      );
+      await axios.post(process.env.REACT_APP_API_URL + "/tweets", tweetData, {
+        headers: { Authorization: `Bearer ${sessionData.token}` },
+      });
       dispatch(actions.create(tweetData));
     } catch (error) {
       console.log(error);

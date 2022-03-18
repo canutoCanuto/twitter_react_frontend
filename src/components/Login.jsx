@@ -1,9 +1,9 @@
 import { Button, Modal, Form } from "react-bootstrap";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import axios from "axios";
 import actions from "../redux/userActions";
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [show, setShow] = useState(false);

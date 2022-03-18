@@ -3,8 +3,6 @@ import { Row, Col, Image } from "react-bootstrap";
 import "./Tweet.css";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import actions from "../redux/tweetActions";
 
 function Tweet({ tweet }) {

@@ -1,11 +1,4 @@
-import {
-  Button,
-  Popover,
-  OverlayTrigger,
-  Col,
-  Image,
-  Row,
-} from "react-bootstrap";
+import { Button, Popover, OverlayTrigger, Image } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import actions from "../redux/userActions";
@@ -19,7 +12,7 @@ function LogoutPopover() {
     ev.preventDefault();
     try {
       console.log(sessionData);
-      const response = await axios({
+      await axios({
         url: process.env.REACT_APP_API_URL + `/users/logout`,
         method: "POST",
         headers: { Authorization: `Bearer ${sessionData.token}` },
