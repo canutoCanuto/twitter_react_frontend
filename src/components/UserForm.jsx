@@ -19,7 +19,7 @@ function UserForm(props) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [exitoRegistro, setExitoRegistro] = useState("");
+  const [mensaje, setMensaje] = useState("");
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -32,13 +32,14 @@ function UserForm(props) {
         email: email,
         password: password,
       });
-      setExitoRegistro("Registro exitoso");
+      setMensaje("Registro exitoso");
       setName("");
       setSurname("");
       setUsername("");
       setEmail("");
       setPassword("");
     } catch (error) {
+      setMensaje("Error");
       console.log(error);
     }
   };
@@ -133,8 +134,8 @@ function UserForm(props) {
             <Row>
               <h5 className="text-white">Fecha de nacimiento</h5>
               <p className="text-secondary">
-                Esta informacion no sera publica. Confirma tu propia edadm
-                incluso si esta cuenta es paraq una empresa, una mascota y otra
+                Esta informacion no sera publica. Confirma tu propia edad
+                incluso si esta cuenta es para una empresa, una mascota y otra
                 cosa.
               </p>{" "}
             </Row>
@@ -185,16 +186,10 @@ function UserForm(props) {
           </Container>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={handleRegister}>Registrar</Button>
           <Button onClick={handleClose}>Close</Button>
+          <Button onClick={handleRegister}>Registrar</Button>
         </Modal.Footer>
-        {exitoRegistro ? (
-          <p className="bg-success text-center text-light p-2">
-            Registro exitoso!
-          </p>
-        ) : (
-          <p className="bg-danger text-center text-light p-2">Error</p>
-        )}
+        <p className="text-center text-dark p-2 fs-5">{mensaje}</p>
       </Modal>
     </>
   );
