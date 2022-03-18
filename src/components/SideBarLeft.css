@@ -2,7 +2,9 @@
 } */
 
 /*Side Bar styles*/
-
+.sidebar-left-container {
+  border-right: grey solid 2px;
+}
 .sidebar-left-container a:link,
 .sidebar-left-container a:visited,
 .sidebar-left-container a:active,

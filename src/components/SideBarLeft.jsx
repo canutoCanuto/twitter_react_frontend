@@ -47,7 +47,7 @@ function SideBarL() {
   };
 
   return (
-    <div className="sidebar-left-container sticky-top">
+    <div className="sidebar-left-container sticky-top sidebar-left-container ">
       <Link className="exanchora" to="/home">
         <div
           className="div-container px-2 pt-1 rounded-pill mt-2 mb-3"
@@ -252,7 +252,7 @@ function SideBarL() {
                 <Form.Control
                   as="textarea"
                   style={{ height: "8rem" }}
-                  className="bg-black text-light  "
+                  className="bg-black text-light "
                   placeholder="What's happening?"
                   value={newTweetContent}
                   onChange={(e) => setNewTweetContent(e.target.value)}

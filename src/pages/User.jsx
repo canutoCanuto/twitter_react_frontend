@@ -36,10 +36,10 @@ function User() {
   return (
     <Container>
       <Row>
-        <Col xs={2} sm={2} md={3} lg={2}>
+        <Col xs={2} sm={2} md={3} lg={3}>
           <SideBarLeft />
         </Col>
-        <Col xs={10} sm={10} md={9} lg={6}>
+        <Col xs={10} sm={10} md={9} lg={5} className="ps-4 contenedorProfile">
           <div className="row mx-1 sticky-top bg-black text-light pt-2">
             <div className="col-1 p-3">
               <a href="/home">
@@ -54,11 +54,11 @@ function User() {
             </div>
           </div>
           <div className="row mx-1 bg-black text-light border-bottom ">
-            <div className="col-5 mb-5 divfotoperfil">
+            <div className="col-7 mb-5 divfotoperfil">
               <img
                 src={postUser.avatar}
                 alt="Avatar"
-                className="profileimage w-50 h-50"
+                className="profileimage w-50 h-50 img-fluid"
               />
               <p className="fw-bold fs-4 mb-0 text-light text-start">
                 {postUser.firstname} {postUser.lastname}
