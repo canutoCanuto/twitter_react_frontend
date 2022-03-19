@@ -14,6 +14,7 @@ function User() {
   const [, , path] = window.location.pathname.split("/");
   const tweetList = useSelector((state) => state.tweets);
   const token = useSelector((state) => state.users[0].token);
+  const userId = useSelector((state) => state.users[0].id);
   const dispatch = useDispatch();
   const [postUser, setPostUser] = useState({});
   const [joinedDate, setJoinedDate] = useState("");
@@ -36,17 +37,20 @@ function User() {
 
   const handelFollow = async () => {
     try {
-      console.log("FOLLOW ", postUser._id);
+      setFollowButton((prev) => {
+        if (prev === "unFollow") {
+          setFollowButton("Follow");
+        } else {
+          setFollowButton("unFollow");
+        }
+      });
 
       const response = await axios({
         url: process.env.REACT_APP_API_URL + `/users/${postUser._id}/follow`,
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
       });
-      console.log(response.data);
-      const user = response.data.userLogged;
-
-      dispatch(userActions.follow(user));
+      // const user = response.data.userLogged;
     } catch (error) {
       console.log(error);
     }
@@ -55,6 +59,14 @@ function User() {
   useEffect(() => {
     getProfileTweets();
   }, []);
+
+  const [followButton, setFollowButton] = useState("Follow");
+  useEffect(() => {
+    if (postUser.followers && postUser.followers.includes(userId)) {
+      setFollowButton("unFollow");
+    }
+  }, [postUser]);
+
   return (
     <Container>
       <Row>
@@ -115,7 +127,7 @@ function User() {
                 className="btn btn-primary rounded-pill px-3 py-0 btn-follow "
                 onClick={() => handelFollow()}
               >
-                Follow
+                {followButton}
               </button>
             </div>
           </div>

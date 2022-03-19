@@ -12,7 +12,6 @@ function tweetReducer(state = [], action) {
     case "UPDATE_LIKE":
       return state.map((tweet) => {
         if (tweet.id === action.payload.id) {
-          console.log(action.payload);
           return action.payload;
         } else {
           return tweet;
