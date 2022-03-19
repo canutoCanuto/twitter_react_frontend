@@ -22,11 +22,12 @@
   fill: white;
   position: absolute;
   display: block;
-  left: 150px;
+  left: 70px;
   top: 180px;
-  width: 30%;
-  height: 30%;
+  width: 45%;
+  height: 45%;
 }
+
 .containerright {
   background-color: black;
   position: absolute-right;
@@ -41,28 +42,29 @@
   text-align: start;
   color: white;
   font-size: 70px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 .title2 {
   text-align: start;
   color: white;
   font-size: 30px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 .servicios {
   margin-bottom: 60px;
   margin-top: 5px;
+  font-size: 0.65rem;
 }
 .title3 {
   color: white;
   font-size: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 .smalllogo {
   display: flex;
   fill: white;
-  margin-top: 40px;
-  margin-bottom: 60px;
+  margin-top: 20px;
+  margin-bottom: 45px;
 }
 
 a:link {
