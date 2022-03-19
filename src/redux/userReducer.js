@@ -6,6 +6,9 @@ function userReducer(state = [], action) {
     case "LOGOUT":
       return [];
 
+    case "FOLLOW":
+      return state.followings.map();
+
     default:
       return state;
   }

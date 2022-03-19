@@ -3,10 +3,12 @@ import SideBarLeft from "../components/SideBarLeft";
 import SideBarRight from "../components/SideBarRight";
 import Tweet from "../components/Tweet";
 import actions from "../redux/tweetActions";
+import userActions from "../redux/userActions";
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
+import "./User.css";
 
 function User() {
   const [, , path] = window.location.pathname.split("/");
@@ -24,13 +26,32 @@ function User() {
       );
       const { postUser, tweets, formattedDate } = data;
       dispatch(actions.getUserTweets([...tweets]));
-      console.log(data);
+
       setPostUser({ ...postUser });
       setJoinedDate(formattedDate);
     } catch (error) {
       console.log(error);
     }
   };
+
+  const handelFollow = async () => {
+    try {
+      console.log("FOLLOW ", postUser._id);
+
+      const response = await axios({
+        url: process.env.REACT_APP_API_URL + `/users/${postUser._id}/follow`,
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      console.log(response.data);
+      const user = response.data.userLogged;
+
+      dispatch(userActions.follow(user));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     getProfileTweets();
   }, []);
@@ -88,6 +109,14 @@ function User() {
                 {postUser.followers ? postUser.followers.length : 0}
                 <span className="text-muted">Followers </span>
               </p>
+            </div>
+            <div className="col ">
+              <button
+                className="btn btn-primary rounded-pill px-3 py-0 btn-follow "
+                onClick={() => handelFollow()}
+              >
+                Follow
+              </button>
             </div>
           </div>
           <div className="mt-4">
