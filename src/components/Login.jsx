@@ -34,8 +34,12 @@ function Login() {
   };
   return (
     <div>
-      <Button variant="primary" className="botonlogin" onClick={handleShow}>
-        Log In
+      <Button
+        variant="primary"
+        className="botonlogin text-primary"
+        onClick={handleShow}
+      >
+        Sign in
       </Button>
       <Modal
         id="staticBackdrop"
