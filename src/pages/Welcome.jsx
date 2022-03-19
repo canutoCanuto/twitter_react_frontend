@@ -2,12 +2,14 @@ import React from "react";
 import "./Welcome.css";
 import { Row, Col } from "react-bootstrap";
 import Login from "../components/Login";
+import { Link } from "react-router-dom";
+
 function Welcome() {
   return (
     <>
       <Row>
         <Col lg={6}>
-          <div className=" backgroundWelcome">
+          <div className="backgroundWelcome">
             <img
               alt=""
               draggable="false"
@@ -44,24 +46,25 @@ function Welcome() {
             <span>Join Twitter today.</span>
           </div>
           <div className=" d-flex flex-column mb-3 d-grid gap-1 col-6">
-            <a href="#" className="applebutton mb-2">
+            <Link to="#" className="applebutton mb-2">
               Sign up with Google
-            </a>
-            <a href="#" className="applebutton">
+            </Link>
+            <Link to="#" className="applebutton">
               Sign up with con Apple
-            </a>
+            </Link>
             <div className="d-flex justify-content-center  separador">
               <div>------------------------</div>
               <div>or</div>
               <div>------------------------</div>
             </div>
-            <a href="#" className="applephone">
+            <Link to="#" className="applephone">
               Sign up with phone or email
-            </a>
+            </Link>
             <div className="servicios">
-              By signing up, you agree to the <a href="">Terms de Service</a>{" "}
-              and <a href="">Privacy Policy</a>, incluiding
-              <a href=""> Cookie use.</a>
+              By signing up, you agree to the{" "}
+              <Link to="">Terms de Service</Link> and{" "}
+              <Link to="">Privacy Policy</Link>, incluiding
+              <Link to=""> Cookie use.</Link>
             </div>
             <div className="title3">
               <span>Already have an account?</span>
