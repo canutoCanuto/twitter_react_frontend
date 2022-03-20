@@ -35,7 +35,7 @@ function CreateTweet() {
   };
 
   return (
-    <Row className="py-2 bg-black text-light mx-1 border-bottom">
+    <Row className="py-2 bg-black text-light mx-1 border-start border-end border-bottom">
       <Col sm={2}>
         <Image
           src={sessionData.avatar}

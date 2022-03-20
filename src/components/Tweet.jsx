@@ -27,8 +27,8 @@ function Tweet({ tweet }) {
   };
 
   return (
-    <Row className="mx-1 tweet bg-black text-light border-bottom">
-      <Col xs={2} sm={2} md={2} lg={2} className="mx-0 px-0 pt-3">
+    <Row className="mx-1 tweet bg-black text-light border-bottom border-start border-end">
+      <Col xs={2} sm={2} md={2} lg={2} className="mx-0 pe-0 ps-2 pt-3">
         <Image
           src={tweet.author.avatar}
           alt="Avatar"
@@ -37,8 +37,8 @@ function Tweet({ tweet }) {
         />{" "}
       </Col>
       <Col className="ps-0">
-        <div className=" pt-3 ">
-          <div className="ms-3">
+        <div className="pt-3">
+          <div className="ms-1">
             <Row className=" text-start d-flex justify-content-between">
               <Col md={11}>
                 <span className="fw-bold">
