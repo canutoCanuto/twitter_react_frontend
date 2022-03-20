@@ -74,7 +74,13 @@ function User() {
         <Col xs={2} sm={2} md={3} lg={3}>
           <SideBarLeft />
         </Col>
-        <Col xs={10} sm={10} md={9} lg={5} className="ps-4 contenedorProfile">
+        <Col
+          xs={10}
+          sm={10}
+          md={9}
+          lg={5}
+          className="contenedorProfile border-start border-end"
+        >
           <div className="row mx-1 sticky-top bg-black text-light pt-1 ">
             <div className="col-1 p-3">
               <Link to="/home">
@@ -99,11 +105,11 @@ function User() {
             </div>
           </div>
           <div className="row mx-1 bg-black text-light justify-content-evenly">
-            <div className="col-7 mb-5 divfotoperfil">
+            <div className="col-9 mb-3 divfotoperfil">
               <img
                 src={postUser.avatar}
                 alt="Avatar"
-                className="profileimage w-50 h-50 img-fluid rounded-circle mb-3"
+                className="profileimage img-fluid rounded-circle mb-3"
               />
               <p className="fw-bold fs-4 mb-0 text-light text-start">
                 {postUser.firstname} {postUser.lastname}
@@ -128,7 +134,7 @@ function User() {
                 <span className="text-muted">Followers </span>
               </p>
             </div>
-            <div className="col-2 ps-3 align-self-center">
+            <div className="col-3 align-self-center">
               <button
                 className="btn btn-light fw-bold rounded-pill px-3 py-0 btn-follow"
                 onClick={() => handelFollow()}
@@ -137,7 +143,7 @@ function User() {
               </button>
             </div>
           </div>
-          <div className="mt-4 border-top">
+          <div className="row border-top ">
             {tweetList
               .map((tweet) => <Tweet key={tweet.id} tweet={tweet} />)
               .reverse()}
