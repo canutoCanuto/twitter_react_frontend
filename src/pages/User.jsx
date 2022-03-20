@@ -27,7 +27,7 @@ function User() {
         { headers: { Authorization: `Bearer ${token}` } }
       );
       const { postUser, tweets, formattedDate } = data;
-      dispatch(actions.getUserTweets([...tweets]));
+      dispatch(actions.getUserTweets(tweets));
 
       setPostUser({ ...postUser });
       setJoinedDate(formattedDate);
