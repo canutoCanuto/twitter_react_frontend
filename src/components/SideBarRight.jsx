@@ -17,7 +17,7 @@ function Widgets() {
           <input
             placeholder="Search Twitter"
             type="text"
-            className="text-light"
+            className="text-light input-search"
           />
         </div>
 

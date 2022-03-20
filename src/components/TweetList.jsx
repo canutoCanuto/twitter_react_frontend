@@ -2,11 +2,12 @@ import "./TweetList.css";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import actions from "../redux/tweetActions";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Tweet from "./Tweet";
 
 function TweetList() {
   const tweetList = useSelector((state) => state.tweets);
+  const [privateStateTweets, setPrivateStateTweets] = useState(tweetList);
   const token = useSelector((state) => state.users[0].token);
   const dispatch = useDispatch();
 
@@ -17,6 +18,7 @@ function TweetList() {
         { headers: { Authorization: `Bearer ${token}` } }
       );
       dispatch(actions.randomList(response.data.last100Tweets));
+      setPrivateStateTweets([...tweetList]);
     } catch (error) {
       console.log(error);
     }
@@ -25,9 +27,9 @@ function TweetList() {
   useEffect(() => {
     dispatch(actions.clearRandomList());
     getTweets();
-  }, []);
+  }, [privateStateTweets]);
 
-  return tweetList
+  return privateStateTweets
     .map((tweet) => <Tweet tweet={tweet} key={tweet.id} />)
     .reverse();
 }

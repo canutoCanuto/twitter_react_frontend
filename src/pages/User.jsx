@@ -3,7 +3,6 @@ import SideBarLeft from "../components/SideBarLeft";
 import SideBarRight from "../components/SideBarRight";
 import Tweet from "../components/Tweet";
 import actions from "../redux/tweetActions";
-import userActions from "../redux/userActions";
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
@@ -14,6 +13,7 @@ import { Link } from "react-router-dom";
 function User() {
   const [, , path] = window.location.pathname.split("/");
   const tweetList = useSelector((state) => state.tweets);
+  const [privateStateTweet, setprivateStateTweet] = useState(tweetList);
   const token = useSelector((state) => state.users[0].token);
   const userId = useSelector((state) => state.users[0].id);
   const dispatch = useDispatch();
@@ -28,6 +28,7 @@ function User() {
       );
       const { postUser, tweets, formattedDate } = data;
       dispatch(actions.getUserTweets(tweets));
+      setprivateStateTweet([...tweets]);
 
       setPostUser({ ...postUser });
       setJoinedDate(formattedDate);
@@ -59,7 +60,7 @@ function User() {
   useEffect(() => {
     dispatch(actions.clearRandomList());
     getProfileTweets();
-  }, []);
+  }, [privateStateTweet]);
 
   const [followButton, setFollowButton] = useState("Follow");
   useEffect(() => {
@@ -98,9 +99,9 @@ function User() {
                 {postUser.firstname} {postUser.lastname}
               </p>
               <p className="text-muted mb-2 text-start ps-2">
-                {tweetList.length < 2
-                  ? tweetList.length + " Tweet"
-                  : tweetList.length + " Tweets"}
+                {privateStateTweet.length < 2
+                  ? privateStateTweet.length + " Tweet"
+                  : privateStateTweet.length + " Tweets"}
               </p>
             </div>
           </div>
@@ -145,7 +146,7 @@ function User() {
           </div>
           <div className="row tweet-list-border">
             <Col className="p-0">
-              {tweetList
+              {privateStateTweet
                 .map((tweet) => <Tweet key={tweet.id} tweet={tweet} />)
                 .reverse()}
             </Col>
