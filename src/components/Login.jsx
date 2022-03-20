@@ -7,10 +7,10 @@ import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [show, setShow] = useState(false);
-  const [username, setUsername] = useState("");
+  const [data, setData] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-
   const dispatch = useDispatch();
 
   const handleClose = () => setShow(false);
@@ -22,13 +22,15 @@ function Login() {
       const response = await axios.post(
         process.env.REACT_APP_API_URL + "/users/login",
         {
-          username: username,
+          username: data,
+          email: data,
           password: password,
         }
       );
       dispatch(actions.login(response.data));
       navigate("/home");
     } catch (error) {
+      setErrorMessage("¡Error!");
       console.log(error);
     }
   };
@@ -89,12 +91,12 @@ function Login() {
                   type="text"
                   className="form-control bg-dark text-white"
                   id="username"
-                  placeholder="Username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  placeholder="Username or Email"
+                  value={data}
+                  onChange={(e) => setData(e.target.value)}
                 />
                 <Form.Label className="text-secondary" htmlFor="floatingInput">
-                  Username
+                  Username or email
                 </Form.Label>
               </div>
               <div className="form-floating">
@@ -131,6 +133,7 @@ function Login() {
               Don't have an account? <a href="/checkin">Sign up</a>
             </div>
           </div>
+          <p className="text-danger fs-5 w-100 text-center">{errorMessage}</p>
         </Modal.Body>
       </Modal>
     </div>

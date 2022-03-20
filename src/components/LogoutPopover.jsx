@@ -71,7 +71,7 @@ function LogoutPopover() {
             {sessionData.firstname} {sessionData.lastname}
             <span className="text-muted"> @{sessionData.username}</span>
           </div>
-          <div className="ps-2">...</div>
+          <div className="ps-2 w-25">. . .</div>
         </Button>
       </OverlayTrigger>
     </>

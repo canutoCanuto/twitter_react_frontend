@@ -6,8 +6,11 @@ import Welcome from "./pages/Welcome";
 import PrivateRoute from "./components/PrivateRoute";
 import UserForm from "./components/UserForm";
 import "./components/LogoutPopover.css";
+import { useSelector } from "react-redux";
 
 function App() {
+  const loggedUser = useSelector((state) => state.users[0]);
+
   return (
     <div className="app">
       <Routes>
@@ -17,7 +20,11 @@ function App() {
           path="/users/:username"
           element={<PrivateRoute element={<User />} />}
         />
-        <Route path="/login" element={<Welcome />} />
+        {loggedUser ? (
+          <Route path="/login" element={<Home />} />
+        ) : (
+          <Route path="/login" element={<Welcome />} />
+        )}
         <Route path="/register" element={<UserForm />} />
       </Routes>
     </div>

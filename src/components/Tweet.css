@@ -23,3 +23,6 @@
   border-color: #2f3336;
   border-width: 1px;
 }
+.info-tweet {
+  cursor: pointer;
+}
