@@ -9,6 +9,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import "./User.css";
+import { Link } from "react-router-dom";
 
 function User() {
   const [, , path] = window.location.pathname.split("/");
@@ -74,9 +75,9 @@ function User() {
           <SideBarLeft />
         </Col>
         <Col xs={10} sm={10} md={9} lg={5} className="ps-4 contenedorProfile">
-          <div className="row mx-1 sticky-top bg-black text-light pt-2">
+          <div className="row mx-1 sticky-top bg-black text-light pt-1 ">
             <div className="col-1 p-3">
-              <a href="/home">
+              <Link to="/home">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 448 512"
@@ -84,27 +85,32 @@ function User() {
                 >
                   <path d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z" />
                 </svg>
-              </a>
+              </Link>
+            </div>
+            <div className="col-11">
+              <p className="fw-bold fs-4 mb-0 text-light text-start ps-2">
+                {postUser.firstname} {postUser.lastname}
+              </p>
+              <p className="text-muted mb-2 text-start ps-2">
+                {tweetList.length < 2
+                  ? tweetList.length + " Tweet"
+                  : tweetList.length + " Tweets"}
+              </p>
             </div>
           </div>
-          <div className="row mx-1 bg-black text-light border-bottom ">
+          <div className="row mx-1 bg-black text-light justify-content-evenly">
             <div className="col-7 mb-5 divfotoperfil">
               <img
                 src={postUser.avatar}
                 alt="Avatar"
-                className="profileimage w-50 h-50 img-fluid"
+                className="profileimage w-50 h-50 img-fluid rounded-circle mb-3"
               />
               <p className="fw-bold fs-4 mb-0 text-light text-start">
                 {postUser.firstname} {postUser.lastname}
               </p>
               <p className="text-muted text-start mb-1">@{postUser.username}</p>
-              <div className="col-11">
-                <p className="text-muted mb-1 text-start">
-                  {tweetList.length < 2
-                    ? tweetList.length + " Tweet"
-                    : tweetList.length + " Tweets"}
-                </p>
-              </div>
+              <p>{postUser.description}</p>
+
               <p className="text-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -122,16 +128,16 @@ function User() {
                 <span className="text-muted">Followers </span>
               </p>
             </div>
-            <div className="col ">
+            <div className="col-2 ps-3 align-self-center">
               <button
-                className="btn btn-primary rounded-pill px-3 py-0 btn-follow "
+                className="btn btn-light fw-bold rounded-pill px-3 py-0 btn-follow"
                 onClick={() => handelFollow()}
               >
                 {followButton}
               </button>
             </div>
           </div>
-          <div className="mt-4">
+          <div className="mt-4 border-top">
             {tweetList
               .map((tweet) => <Tweet key={tweet.id} tweet={tweet} />)
               .reverse()}

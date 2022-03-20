@@ -69,7 +69,7 @@ function Widgets() {
                 <img className="" src="/img/mSTk9qRJ_400x400.jpg" alt="" />
               </div>
               <div className="col-4">
-                <h6 className=" text-start pcolor">
+                <h6 className="text-start pcolor">
                   El Observador
                   <svg
                     viewBox="0 0 24 24"
@@ -88,7 +88,7 @@ function Widgets() {
               </div>
               <div className="col ms-3 mt-3 w-25 ">
                 <Link to="#">
-                  <button className="btn btn-primary rounded-pill px-3 py-0  pcolor">
+                  <button className="btn btn-light fw-bold rounded-pill px-3 py-0">
                     Follow
                   </button>
                 </Link>
@@ -120,7 +120,7 @@ function Widgets() {
               </div>
               <div className="col ms-3 mt-3 w-25 ">
                 <Link to="#">
-                  <button className="btn btn-primary rounded-pill px-3 py-0 pcolor">
+                  <button className="btn btn-light fw-bold rounded-pill px-3 py-0">
                     Follow
                   </button>
                 </Link>
@@ -152,7 +152,7 @@ function Widgets() {
               </div>
               <div className="col ms-3 mt-3 w-25 ">
                 <Link to="#">
-                  <button className="btn btn-primary rounded-pill px-3 py-0 pcolor">
+                  <button className="btn btn-light fw-bold rounded-pill px-3 py-0">
                     Follow
                   </button>
                 </Link>
@@ -188,7 +188,7 @@ function Widgets() {
               </div>
               <div className="col ms-3 mt-3 w-25 ">
                 <Link to="#">
-                  <button className="btn btn-primary rounded-pill px-3 py-0  ">
+                  <button className="btn btn-light fw-bold rounded-pill px-3 py-0">
                     Follow
                   </button>
                 </Link>
@@ -220,7 +220,7 @@ function Widgets() {
               </div>
               <div className="col ms-3 mt-3 w-25 ">
                 <Link to="#">
-                  <button className="btn btn-primary rounded-pill px-3 py-0 ">
+                  <button className="btn btn-light fw-bold rounded-pill px-3 py-0">
                     Follow
                   </button>
                 </Link>
