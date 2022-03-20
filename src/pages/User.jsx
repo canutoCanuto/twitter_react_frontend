@@ -79,7 +79,7 @@ function User() {
           sm={10}
           md={9}
           lg={5}
-          className="contenedorProfile border-start border-end"
+          className="contenedorProfile profile-info-borders"
         >
           <div className="row sticky-top bg-black text-light pt-1 mx-1">
             <div className="col-1 p-3">
@@ -143,7 +143,7 @@ function User() {
               </button>
             </div>
           </div>
-          <div className="row border-top">
+          <div className="row tweet-list-border">
             <Col className="p-0">
               {tweetList
                 .map((tweet) => <Tweet key={tweet.id} tweet={tweet} />)

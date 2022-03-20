@@ -15,3 +15,11 @@
   filter: invert(97%) sepia(0%) saturate(0%) hue-rotate(179deg) brightness(90%)
     contrast(83%);
 }
+
+.tweet-borders {
+  border-bottom: solid;
+  border-left: solid;
+  border-right: solid;
+  border-color: #2f3336;
+  border-width: 1px;
+}

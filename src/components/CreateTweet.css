@@ -8,3 +8,11 @@
 .btn-tweet {
   background-color: #1da1f2;
 }
+
+.borders {
+  border-bottom: solid;
+  border-left: solid;
+  border-right: solid;
+  border-color: #2f3336;
+  border-width: 1px;
+}
