@@ -57,6 +57,7 @@ function User() {
   };
 
   useEffect(() => {
+    dispatch(actions.clearRandomList());
     getProfileTweets();
   }, []);
 

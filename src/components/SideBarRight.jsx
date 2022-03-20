@@ -71,13 +71,13 @@ function Widgets() {
             <div className="col-2">
               <img
                 className="profile-avatar rounded-circle"
-                src="/img/mSTk9qRJ_400x400.jpg"
+                src="/img/avi_observador.jpg"
                 alt="Avatar"
               />
             </div>
             <div className="col-6 ms-2 pe-0">
-              <h6 className="text-start pcolor mb-0">
-                El Observador
+              <h6 className="text-start pcolor mb-0 pt-1">
+                El Observador{" "}
                 <svg
                   viewBox="0 0 24 24"
                   aria-label="Verified account"
@@ -93,7 +93,7 @@ function Widgets() {
                 <small>@Observador</small>
               </p>
             </div>
-            <div className="col mt-3 w-25 ps-0">
+            <div className="col mt-2 w-25 ps-0">
               <Link to="#">
                 <button className="btn btn-light fw-bold rounded-pill px-3 py-0">
                   Follow
@@ -105,13 +105,13 @@ function Widgets() {
             <div className="col-2">
               <img
                 className="profile-avatar rounded-circle"
-                src="/img/mSTk9qRJ_400x400.jpg"
+                src="/img/avi_tomhardy.jpg"
                 alt="Avatar"
               />
             </div>
             <div className="col-6 ms-2 pe-0">
-              <h6 className="text-start pcolor mb-0">
-                Tom hardy{" "}
+              <h6 className="text-start pcolor mb-0 pt-1">
+                Tom Hardy{" "}
                 <svg
                   viewBox="0 0 24 24"
                   aria-label="Verified account"
@@ -127,7 +127,7 @@ function Widgets() {
                 <small>@_VSimmons</small>
               </p>
             </div>
-            <div className="col mt-3 w-25 ps-0">
+            <div className="col mt-2 w-25 ps-0">
               <Link to="#">
                 <button className="btn btn-light fw-bold rounded-pill px-3 py-0">
                   Follow
@@ -139,12 +139,12 @@ function Widgets() {
             <div className="col-2">
               <img
                 className="profile-avatar rounded-circle"
-                src="/img/mSTk9qRJ_400x400.jpg"
+                src="/img/avi_got.jpg"
                 alt="Avatar"
               />
             </div>
             <div className="col-6 ms-2 pe-0">
-              <h6 className="text-start pcolor mb-0">
+              <h6 className="text-start pcolor mb-0 pt-1">
                 Game of Thrones{" "}
                 <svg
                   viewBox="0 0 24 24"
@@ -161,7 +161,7 @@ function Widgets() {
                 <small>@GameOfThrones</small>
               </p>
             </div>
-            <div className="col mt-3 w-25 ps-0">
+            <div className="col mt-2 w-25 ps-0">
               <Link to="#">
                 <button className="btn btn-light fw-bold rounded-pill px-3 py-0">
                   Follow
@@ -173,12 +173,12 @@ function Widgets() {
             <div className="col-2">
               <img
                 className="pcolor profile-avatar rounded-circle"
-                src="/img/mSTk9qRJ_400x400.jpg"
+                src="/img/avi_georgerr.jpg"
                 alt="Avatar"
               />
             </div>
             <div className="col-6 ms-2 pe-0">
-              <h6 className="text-start pcolor mb-0">
+              <h6 className="text-start pcolor mb-0 pt-1">
                 George RR Martin{" "}
                 <svg
                   viewBox="0 0 24 24"
@@ -195,7 +195,7 @@ function Widgets() {
                 <small>@GRRMspeaking</small>
               </p>
             </div>
-            <div className="col mt-3 w-25 ps-0">
+            <div className="col mt-2 w-25 ps-0">
               <Link to="#">
                 <button className="btn btn-light fw-bold rounded-pill px-3 py-0">
                   Follow
@@ -207,11 +207,11 @@ function Widgets() {
             <div className="col-2">
               <img
                 className="profile-avatar rounded-circle"
-                src="/img/mSTk9qRJ_400x400.jpg"
+                src="/img/avi_patroth.jpeg"
                 alt="Avatar"
               />
             </div>
-            <div className="col-6 ms-2 pe-0">
+            <div className="col-6 ms-2 pe-0 pt-1">
               <h6 className=" text-start pcolor mb-0">
                 Pat Rothfuss{" "}
                 <svg
@@ -229,7 +229,7 @@ function Widgets() {
                 <small>@PatrickRothfuss</small>
               </p>
             </div>
-            <div className="col mt-3 w-25 ps-0">
+            <div className="col mt-2 w-25 ps-0">
               <Link to="#">
                 <button className="btn btn-light fw-bold rounded-pill px-3 py-0">
                   Follow
