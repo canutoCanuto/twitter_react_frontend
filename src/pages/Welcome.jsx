@@ -8,14 +8,12 @@ function Welcome() {
   return (
     <Container className="ms-0 ps-0">
       <Row>
-        <Col xl={7} lg={5} className="ps-0">
+        <Col xl={7} className="ps-0">
           <div className="backgroundWelcome">
-            <img
-              alt=""
+            <div
               draggable="false"
-              src="https://abs.twimg.com/sticky/illustrations/lohp_1302x955.png"
-              className="img-fluid"
-            />
+              // src="https://abs.twimg.com/sticky/illustrations/lohp_1302x955.png"
+            ></div>
 
             <svg
               className="absolutimg"
@@ -29,7 +27,7 @@ function Welcome() {
           </div>
         </Col>
 
-        <Col xl={5} lg={7} className="containerRegister containerright">
+        <Col xl={5} className="containerRegister containerright">
           <svg
             className="smalllogo"
             xmlns="http://www.w3.org/2000/svg"
