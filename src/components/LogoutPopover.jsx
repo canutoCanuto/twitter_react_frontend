@@ -36,7 +36,7 @@ function LogoutPopover() {
           roundedCircle={true}
           className="profile-avatar imagenLogOut"
         />
-        <div className="ps-2">
+        <div className="ps-2 fw-bold">
           {sessionData.firstname} {sessionData.lastname}{" "}
           <span className="text-muted">@{sessionData.username}</span>
         </div>

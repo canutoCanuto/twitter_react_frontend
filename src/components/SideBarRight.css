@@ -6,7 +6,7 @@
 .widgets__input {
   display: flex;
   align-items: center;
-  background-color: #f5f8fa;
+  background-color: #16181c;
   padding: 10px;
   border-radius: 20px;
   margin-top: 10px;
@@ -45,4 +45,9 @@
 
 .whastHapp :hover {
   background-color: #16181c;
+}
+
+.verified-logo {
+  filter: invert(97%) sepia(0%) saturate(0%) hue-rotate(179deg) brightness(90%)
+    contrast(83%);
 }

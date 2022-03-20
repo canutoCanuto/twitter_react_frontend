@@ -36,7 +36,7 @@ function CreateTweet() {
 
   return (
     <Row className="py-2 bg-black text-light mx-1 border-start border-end border-bottom">
-      <Col sm={2}>
+      <Col sm={2} className="ps-2">
         <Image
           src={sessionData.avatar}
           alt="Avatar"
@@ -44,7 +44,7 @@ function CreateTweet() {
           className="profile-avatar"
         />
       </Col>
-      <Col>
+      <Col className="ps-0 ms-1">
         <Form onSubmit={handleSubmit}>
           <Form.Control
             as="textarea"
