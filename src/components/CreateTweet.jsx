@@ -22,6 +22,7 @@ function CreateTweet() {
         lastname: sessionData.lastname,
         avatar: sessionData.avatar,
       },
+      createdAt: "Now",
     };
     try {
       await axios.post(process.env.REACT_APP_API_URL + "/tweets", tweetData, {
