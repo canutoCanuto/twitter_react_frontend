@@ -46,12 +46,11 @@ function User() {
         }
       });
 
-      const response = await axios({
+      await axios({
         url: process.env.REACT_APP_API_URL + `/users/${postUser._id}/follow`,
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
       });
-      // const user = response.data.userLogged;
     } catch (error) {
       console.log(error);
     }
@@ -81,7 +80,7 @@ function User() {
           lg={5}
           className="contenedorProfile border-start border-end"
         >
-          <div className="row mx-1 sticky-top bg-black text-light pt-1 ">
+          <div className="row sticky-top bg-black text-light pt-1 mx-1">
             <div className="col-1 p-3">
               <Link to="/home">
                 <svg
@@ -104,7 +103,7 @@ function User() {
               </p>
             </div>
           </div>
-          <div className="row mx-1 bg-black text-light justify-content-evenly">
+          <div className="row bg-black text-light justify-content-evenly mx-1">
             <div className="col-9 mb-3 divfotoperfil">
               <img
                 src={postUser.avatar}
@@ -143,10 +142,12 @@ function User() {
               </button>
             </div>
           </div>
-          <div className="row border-top ">
-            {tweetList
-              .map((tweet) => <Tweet key={tweet.id} tweet={tweet} />)
-              .reverse()}
+          <div className="row border-top">
+            <Col className="p-0">
+              {tweetList
+                .map((tweet) => <Tweet key={tweet.id} tweet={tweet} />)
+                .reverse()}
+            </Col>
           </div>
         </Col>
         <Col lg={4}>

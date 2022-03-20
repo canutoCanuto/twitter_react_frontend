@@ -54,13 +54,17 @@ function CreateTweet() {
             value={newTweetContent}
             onChange={(e) => setNewTweetContent(e.target.value)}
           />
-          <Button
-            variant="primary"
-            className="rounded-pill fw-bold mt-2"
-            type="submit"
-          >
-            Tweet
-          </Button>
+          <Row className="justify-content-end">
+            <Col xs={4}>
+              <Button
+                variant="primary"
+                className="btn-tweet rounded-pill fw-bold mt-2"
+                type="submit"
+              >
+                Tweet
+              </Button>
+            </Col>
+          </Row>
         </Form>
       </Col>
     </Row>

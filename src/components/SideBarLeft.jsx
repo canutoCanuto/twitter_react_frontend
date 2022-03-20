@@ -231,10 +231,10 @@ function SideBarL() {
       </div>
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Body className="bg-black text-light pt-3 rounded">
+        <Modal.Body className="bg-black text-light pt-2 rounded">
           <button
             type="button"
-            className="btn-close btn-close-white"
+            className="btn-close btn-close-white pb-3"
             aria-label="Close"
             onClick={handleClose}
           ></button>
@@ -257,13 +257,17 @@ function SideBarL() {
                   value={newTweetContent}
                   onChange={(e) => setNewTweetContent(e.target.value)}
                 />
-                <Button
-                  variant="primary"
-                  className="rounded-pill fw-bold mt-2 "
-                  onClick={handleSubmit}
-                >
-                  Tweet
-                </Button>
+                <Row className="justify-content-end">
+                  <Col xs={4}>
+                    <Button
+                      variant="primary"
+                      className="rounded-pill fw-bold mt-2 btn-modal"
+                      onClick={handleSubmit}
+                    >
+                      Tweet
+                    </Button>
+                  </Col>
+                </Row>
               </Form>
             </Col>
           </Row>
