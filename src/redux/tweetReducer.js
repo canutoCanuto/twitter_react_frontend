@@ -20,6 +20,10 @@ function tweetReducer(state = [], action) {
 
     case "GET_USER_TWEETS":
       return (state = [...action.payload]);
+
+    case "DELETE_TWEET":
+      return state.filter((tweet) => tweet.id !== action.payload.id);
+
     default:
       return state;
   }

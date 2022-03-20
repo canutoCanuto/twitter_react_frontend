@@ -11,9 +11,11 @@ const actions = {
   like: (tweet) => {
     return { type: "UPDATE_LIKE", payload: tweet };
   },
-
   getUserTweets: (tweetsData) => {
     return { type: "GET_USER_TWEETS", payload: tweetsData };
+  },
+  delete: (tweet) => {
+    return { type: "DELETE_TWEET", payload: tweet };
   },
 };
 
