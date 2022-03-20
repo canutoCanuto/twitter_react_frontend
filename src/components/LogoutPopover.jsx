@@ -41,8 +41,12 @@ function LogoutPopover() {
           <span className="text-muted">@{sessionData.username}</span>
         </div>
       </Popover.Header>
-      <Link to="/logout" onClick={handleLogout}>
-        <Popover.Body className=" bg-black text-light">
+      <Link
+        to="/logout"
+        onClick={handleLogout}
+        className="text-decoration-none"
+      >
+        <Popover.Body className="fw-bold bg-black text-white">
           Log out @{sessionData.username}
         </Popover.Body>
       </Link>
