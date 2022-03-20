@@ -35,8 +35,8 @@ function Login() {
   return (
     <div>
       <Button
-        variant="primary"
-        className="botonlogin text-primary"
+        // variant="primary"
+        className="btn d-flex justify-content-center botonlogin text-primary fw-bold px-3"
         onClick={handleShow}
       >
         Sign in

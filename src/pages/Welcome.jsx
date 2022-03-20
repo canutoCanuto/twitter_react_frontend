@@ -1,14 +1,14 @@
 import React from "react";
 import "./Welcome.css";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 import Login from "../components/Login";
 import { Link } from "react-router-dom";
 
 function Welcome() {
   return (
-    <>
+    <Container className="ms-0 ps-0">
       <Row>
-        <Col lg={6}>
+        <Col xl={7} lg={5} className="ps-0">
           <div className="backgroundWelcome">
             <img
               alt=""
@@ -29,7 +29,7 @@ function Welcome() {
           </div>
         </Col>
 
-        <Col lg={6} className="containerRegister containerright">
+        <Col xl={5} lg={7} className="containerRegister containerright">
           <svg
             className="smalllogo"
             xmlns="http://www.w3.org/2000/svg"
@@ -45,19 +45,34 @@ function Welcome() {
           <div className="title2 fw-bold">
             <span>Join Twitter today.</span>
           </div>
-          <div className=" d-flex flex-column mb-3 d-grid gap-1 col-6">
-            <Link to="#" className="applebutton mb-2">
+          <div className="mb-3 gap-1 col-7">
+            <Link
+              to="#"
+              className="d-flex justify-content-center btn applebutton mb-2 px-3"
+            >
               Sign up with Google
             </Link>
-            <Link to="#" className="applebutton">
-              Sign up with con Apple
+            <Link
+              to="#"
+              className="d-flex justify-content-center btn applebutton px-3"
+            >
+              Sign up with Apple
             </Link>
-            <div className="d-flex justify-content-center  separador">
-              <div>------------------------</div>
-              <div>or</div>
-              <div>------------------------</div>
-            </div>
-            <Link to="#" className="applephone text-align-center">
+            <Row className="d-flex justify-content-center separador">
+              <Col>
+                <hr />
+              </Col>
+              <Col lg={1} className="text-center px-0 pt-1">
+                or
+              </Col>
+              <Col>
+                <hr />
+              </Col>
+            </Row>
+            <Link
+              to="#"
+              className="d-flex justify-content-center btn applephone text-align-center px-3 fw-bold"
+            >
               Sign up with phone or email
             </Link>
             <div className="servicios text-muted">
@@ -73,7 +88,7 @@ function Welcome() {
           </div>
         </Col>
       </Row>
-    </>
+    </Container>
   );
 }
 
