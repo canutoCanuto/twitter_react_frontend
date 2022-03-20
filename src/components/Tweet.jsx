@@ -52,7 +52,7 @@ function Tweet({ tweet }) {
                 </span>
                 <span className="text-muted">
                   {" "}
-                  @{tweet.author.username} · {/* {tweet.createdAt}  */}
+                  @{tweet.author.username} · {tweet.createdAt.substring(0, 10)}
                 </span>
               </Col>
               <Col md={1} className="">
