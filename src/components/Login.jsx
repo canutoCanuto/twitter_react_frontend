@@ -75,8 +75,11 @@ function Login() {
 
           <div className="ps-4">
             <div className="modal-body">
-              <h5 className="modal-title text-white" id="staticBackdropLabel">
-                Login{" "}
+              <h5
+                className="modal-title text-white fw-bold pb-3"
+                id="staticBackdropLabel"
+              >
+                Sign in to Twitter
               </h5>
             </div>
             <Form onSubmit={handleSubmit}>
@@ -97,7 +100,7 @@ function Login() {
               <div className="form-floating">
                 <Form.Control
                   name="password"
-                  type="text"
+                  type="password"
                   className="form-control bg-dark text-white"
                   id="password"
                   placeholder="Password"
@@ -116,16 +119,16 @@ function Login() {
                 <div className="d-grid gap-2 py-5">
                   <button
                     type="submit"
-                    className="btn btn-secondary rounded-pill text-black"
+                    className="btn btn-light fw-bold rounded-pill text-black"
                   >
-                    Continue
+                    Next
                   </button>
                 </div>
               </div>
             </Form>
 
             <div className="card-footer text-muted">
-              don't have account? <a href="/checkin">Register</a>
+              Don't have an account? <a href="/checkin">Sign up</a>
             </div>
           </div>
         </Modal.Body>
