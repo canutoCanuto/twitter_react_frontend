@@ -43,7 +43,10 @@ function Tweet({ tweet }) {
             <Row className=" text-start d-flex justify-content-between">
               <Col md={11}>
                 <span className="fw-bold">
-                  <Link to="">
+                  <Link
+                    to={`/users/${tweet.author.username}`}
+                    className="text-reset"
+                  >
                     {tweet.author.firstname} {tweet.author.lastname}
                   </Link>
                 </span>
