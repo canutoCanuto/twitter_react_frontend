@@ -12,7 +12,7 @@ function Welcome() {
           <div className="backgroundWelcome">
             <div
               draggable="false"
-              // src="https://abs.twimg.com/sticky/illustrations/lohp_1302x955.png"
+              src="https://abs.twimg.com/sticky/illustrations/lohp_1302x955.png"
             ></div>
 
             <svg

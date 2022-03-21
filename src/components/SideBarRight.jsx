@@ -95,7 +95,7 @@ function Widgets() {
             </div>
             <div className="col mt-2 w-25 ps-0">
               <Link to="#">
-                <button className="btn btn-light fw-bold rounded-pill px-3 py-0">
+                <button className="btn btn-light fw-bold rounded-pill px-2 py-0">
                   Follow
                 </button>
               </Link>
@@ -129,7 +129,7 @@ function Widgets() {
             </div>
             <div className="col mt-2 w-25 ps-0">
               <Link to="#">
-                <button className="btn btn-light fw-bold rounded-pill px-3 py-0">
+                <button className="btn btn-light fw-bold rounded-pill px-2 py-0">
                   Follow
                 </button>
               </Link>
@@ -163,7 +163,7 @@ function Widgets() {
             </div>
             <div className="col mt-2 w-25 ps-0">
               <Link to="#">
-                <button className="btn btn-light fw-bold rounded-pill px-3 py-0">
+                <button className="btn btn-light fw-bold rounded-pill px-2 py-0">
                   Follow
                 </button>
               </Link>
@@ -197,7 +197,7 @@ function Widgets() {
             </div>
             <div className="col mt-2 w-25 ps-0">
               <Link to="#">
-                <button className="btn btn-light fw-bold rounded-pill px-3 py-0">
+                <button className="btn btn-light fw-bold rounded-pill px-2 py-0">
                   Follow
                 </button>
               </Link>
@@ -231,7 +231,7 @@ function Widgets() {
             </div>
             <div className="col mt-2 w-25 ps-0">
               <Link to="#">
-                <button className="btn btn-light fw-bold rounded-pill px-3 py-0">
+                <button className="btn btn-light fw-bold rounded-pill px-2 py-0">
                   Follow
                 </button>
               </Link>
