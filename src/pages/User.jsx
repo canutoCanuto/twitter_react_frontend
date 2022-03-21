@@ -98,11 +98,11 @@ function User() {
               <p className="fw-bold fs-4 mb-0 text-light text-start ps-2">
                 {postUser.firstname} {postUser.lastname}
               </p>
-              {/* <p className="text-muted mb-2 text-start ps-2">
-                {privateStateTweet.length < 2
-                  ? privateStateTweet.length + " Tweet"
-                  : privateStateTweet.length + " Tweets"}
-              </p> */}
+              <p className="text-muted mb-2 text-start ps-2">
+                {tweetList.length < 2
+                  ? tweetList.length + " Tweet"
+                  : tweetList.length + " Tweets"}
+              </p>
             </div>
           </div>
           <div className="row bg-black text-light justify-content-evenly mx-1">
