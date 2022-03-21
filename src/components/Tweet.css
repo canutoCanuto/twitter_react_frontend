@@ -26,3 +26,9 @@
 .info-tweet {
   cursor: pointer;
 }
+
+@media (min-width: 992px) {
+  .responsivelogosmall {
+    padding-right: 3px;
+  }
+}

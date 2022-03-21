@@ -54,7 +54,7 @@ function Tweet({ tweet }) {
         <div className="pt-3">
           <div className="ms-1">
             <Row className="text-start d-flex justify-content-between">
-              <Col md={11}>
+              <Col md={11} sm={11} xs={11}>
                 <span className="fw-bold">
                   <Link
                     to={`/users/${tweet.author.username}`}
@@ -68,12 +68,12 @@ function Tweet({ tweet }) {
                   @{tweet.author.username} · {tweet.createdAt.substring(0, 10)}
                 </span>
               </Col>
-              <Col md={1}>
+              <Col md={1} sm={1} xs={1} className="responsivelogosmall">
                 {tweet.author._id === sessionData.id ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 320 512"
-                    className="logo-small"
+                    className="logo-small responsivelogosmall"
                     role="button"
                     onClick={() => deleteTweet()}
                   >

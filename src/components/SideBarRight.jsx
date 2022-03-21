@@ -68,9 +68,9 @@ function Widgets() {
         <div className="widgets__widgetContainer ps-4">
           <h2 className="pcolor pb-3">Who to follow</h2>
           <div className="row mb-3">
-            <div className="col-2">
+            <div className="col-2 me-2">
               <img
-                className="profile-avatar rounded-circle"
+                className="whotofollow-avatar  rounded-circle"
                 src="/img/avi_observador.jpg"
                 alt="Avatar"
               />
@@ -102,9 +102,9 @@ function Widgets() {
             </div>
           </div>
           <div className="row mb-3">
-            <div className="col-2">
+            <div className="col-2 me-2">
               <img
-                className="profile-avatar rounded-circle"
+                className="whotofollow-avatar rounded-circle"
                 src="/img/avi_tomhardy.jpg"
                 alt="Avatar"
               />
@@ -136,9 +136,9 @@ function Widgets() {
             </div>
           </div>
           <div className="row mb-3">
-            <div className="col-2">
+            <div className="col-2 me-2">
               <img
-                className="profile-avatar rounded-circle"
+                className="whotofollow-avatar rounded-circle"
                 src="/img/avi_got.jpg"
                 alt="Avatar"
               />
@@ -170,9 +170,9 @@ function Widgets() {
             </div>
           </div>
           <div className="row mb-3">
-            <div className="col-2">
+            <div className="col-2 me-2">
               <img
-                className="pcolor profile-avatar rounded-circle"
+                className="pcolor whotofollow-avatar rounded-circle"
                 src="/img/avi_georgerr.jpg"
                 alt="Avatar"
               />
@@ -204,9 +204,9 @@ function Widgets() {
             </div>
           </div>
           <div className="row">
-            <div className="col-2">
+            <div className="col-2 me-2 whotofollow">
               <img
-                className="profile-avatar rounded-circle"
+                className="whotofollow-avatar rounded-circle"
                 src="/img/avi_patroth.jpeg"
                 alt="Avatar"
               />

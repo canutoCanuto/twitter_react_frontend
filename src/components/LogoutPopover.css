@@ -19,3 +19,42 @@
 #popover-basic {
   border-color: #1da1f2;
 }
+
+@media (max-width: 768px) {
+  .ocultarLogOut {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .botonModal {
+    margin-left: 16px;
+    width: 55px;
+  }
+}
+
+@media (max-width: 768px) {
+  .imagenLogOut {
+    margin-left: -5px;
+    padding-bottom: -3px;
+  }
+}
+
+@media (min-width: 768px) {
+  .botonModal {
+    width: 220px;
+    margin-left: -55px;
+  }
+}
+
+@media (min-width: 992px) {
+  .botonModal {
+    width: 220px;
+    margin-left: -18px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .botonModal {
+    margin-left: 15px;
+  }
+}

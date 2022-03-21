@@ -36,7 +36,7 @@ function LogoutPopover() {
           roundedCircle={true}
           className="profile-avatar imagenLogOut"
         />
-        <div className="ps-2 fw-bold">
+        <div className="ps-2 fw-bold ">
           {sessionData.firstname} {sessionData.lastname}{" "}
           <span className="text-muted">@{sessionData.username}</span>
         </div>
@@ -55,7 +55,12 @@ function LogoutPopover() {
 
   return (
     <>
-      <OverlayTrigger trigger="click" placement="top" overlay={popover}>
+      <OverlayTrigger
+        className=""
+        trigger="click"
+        placement="top"
+        overlay={popover}
+      >
         <Button
           variant="black"
           className="botonModal mt-5 text-light rounded-pill d-flex align-items-center"
@@ -67,11 +72,12 @@ function LogoutPopover() {
             className="profile-avatar imagenLogOut"
           />
 
-          <div className="ps-2">
-            {sessionData.firstname} {sessionData.lastname}
-            <span className="text-muted"> @{sessionData.username}</span>
+          <div className="ps-2 ocultarLogOut ">
+            <span className=" ">{sessionData.firstname}</span>
+            <span className=" ">{sessionData.lastname}</span>
+            <span className=" "> @{sessionData.username}</span>
           </div>
-          <div className="ps-2 w-25">. . .</div>
+          <div className="ps-2 w-25 ocultarLogOut ">. . .</div>
         </Button>
       </OverlayTrigger>
     </>

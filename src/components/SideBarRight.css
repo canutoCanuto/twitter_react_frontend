@@ -55,3 +55,7 @@
   border: none;
   outline: none;
 }
+.whotofollow-avatar {
+  width: 55px;
+  height: 55px;
+}

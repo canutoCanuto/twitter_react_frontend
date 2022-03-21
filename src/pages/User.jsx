@@ -73,7 +73,7 @@ function User() {
     <Container>
       <Row>
         <Col xs={2} sm={2} md={3} lg={3}>
-          <SideBarLeft />
+          <SideBarLeft className="" />
         </Col>
         <Col
           xs={10}

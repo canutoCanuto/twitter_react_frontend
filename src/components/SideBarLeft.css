@@ -1,10 +1,6 @@
 /* .sidebarlefthcontainer {
 } */
 
-/*Side Bar styles*/
-/* .sidebar-left-container {
-  border-right: grey solid 2px;
-} */
 .sidebar-left-container a:link,
 .sidebar-left-container a:visited,
 .sidebar-left-container a:active,
@@ -24,6 +20,7 @@
   align-items: center;
   justify-content: flex-start;
   width: fit-content;
+  margin-left: -30px;
 }
 
 .sidebar-left-container .div-container:hover {
@@ -98,4 +95,21 @@
 
 .btn-modal {
   background-color: #1da1f2;
+}
+@media (max-width: 768px) {
+  .bottonTweeet {
+    width: 65px;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-tweet {
+    margin-right: 0px;
+    margin-left: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .icon-container {
+    margin-left: 40px;
+  }
 }
