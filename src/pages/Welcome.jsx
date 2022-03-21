@@ -2,6 +2,7 @@ import React from "react";
 import "./Welcome.css";
 import { Row, Col, Container } from "react-bootstrap";
 import Login from "../components/Login";
+import UserForm from "../components/UserForm";
 import { Link } from "react-router-dom";
 
 function Welcome() {
@@ -56,6 +57,7 @@ function Welcome() {
             >
               Sign up with Apple
             </Link>
+
             <Row className="d-flex justify-content-center separador">
               <Col>
                 <hr />
@@ -67,12 +69,8 @@ function Welcome() {
                 <hr />
               </Col>
             </Row>
-            <Link
-              to="#"
-              className="d-flex justify-content-center btn applephone text-align-center px-3 fw-bold"
-            >
-              Sign up with phone or email
-            </Link>
+            <UserForm />
+
             <div className="servicios text-muted">
               By signing up, you agree to the{" "}
               <Link to="">Terms de Service</Link> and{" "}

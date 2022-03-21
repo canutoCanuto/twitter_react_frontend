@@ -1,6 +1,10 @@
 import "./UserForm.css";
 import axios from "axios";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 import {
   Modal,
@@ -19,7 +23,6 @@ function UserForm(props) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [mensaje, setMensaje] = useState("");
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -32,22 +35,40 @@ function UserForm(props) {
         email: email,
         password: password,
       });
-      setMensaje("Registro exitoso");
+      toast.success("Register successfully!", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+
+        progress: undefined,
+      });
       setName("");
       setSurname("");
       setUsername("");
       setEmail("");
       setPassword("");
     } catch (error) {
-      setMensaje("Error");
-      console.log(error);
+      toast.info(" Error, faltan completar campos.", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        progress: undefined,
+      });
     }
   };
   return (
     <>
-      <Button className="btn btn-primary " onClick={() => handleShow(true)}>
-        Registrar
-      </Button>
+      <Link
+        className="d-flex justify-content-center btn applephone text-align-center px-3 fw-bold"
+        onClick={() => handleShow(true)}
+        to="#"
+      >
+        Sign up with email
+      </Link>
 
       <Modal
         show={show}
@@ -185,11 +206,10 @@ function UserForm(props) {
             </Row>
           </Container>
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer className="backmodal">
           <Button onClick={handleClose}>Close</Button>
           <Button onClick={handleRegister}>Registrar</Button>
         </Modal.Footer>
-        <p className="text-center text-dark p-2 fs-5">{mensaje}</p>
       </Modal>
     </>
   );

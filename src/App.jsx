@@ -7,6 +7,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import UserForm from "./components/UserForm";
 import "./components/LogoutPopover.css";
 import { useSelector } from "react-redux";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const loggedUser = useSelector((state) => state.users[0]);
@@ -27,6 +28,7 @@ function App() {
         )}
         <Route path="/register" element={<UserForm />} />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }
