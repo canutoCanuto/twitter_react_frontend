@@ -15,15 +15,6 @@ function CreateTweet() {
     if (!newTweetContent) return;
     const tweetData = {
       content: newTweetContent,
-      likes: [],
-      author: {
-        id: sessionData.id,
-        username: sessionData.username,
-        firstname: sessionData.firstname,
-        lastname: sessionData.lastname,
-        avatar: sessionData.avatar,
-      },
-      createdAt: "Now",
     };
     try {
       const response = await axios.post(
