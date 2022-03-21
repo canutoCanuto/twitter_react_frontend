@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -100,7 +101,7 @@ function UserForm(props) {
               </Col>
             </Row>
             <Row className="p-4 w-100 bd-highlight ">
-              <h1 className="tituloCrear">Creat your account</h1>
+              <h1 className="tituloCrear">Crea tu cuenta</h1>
             </Row>
           </Row>
         </Container>
@@ -116,21 +117,20 @@ function UserForm(props) {
                   <Form.Control
                     className="fondo"
                     type="text"
-                    placeholder="Nombre"
+                    placeholder="First Name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
                 </FloatingLabel>
                 <FloatingLabel
                   className="m-3 text-secondary"
-                  controlId="
-                  Last name"
-                  label="Apellido"
+                  controlId="Apellido"
+                  label="LastName"
                 >
                   <Form.Control
                     className="fondo"
                     type="text"
-                    placeholder="Apellido"
+                    placeholder="Last Name"
                     value={surname}
                     onChange={(e) => setSurname(e.target.value)}
                   />
@@ -180,21 +180,20 @@ function UserForm(props) {
               <p className="text-secondary">
                 This information will not be public. Confirm your own age even
                 if this account is for a company, a pet and another thing.
-              </p>
+              </p>{" "}
             </Row>
             <Row>
               <Col xs={6} md={4}>
                 <FloatingLabel
                   className="text-secondary"
                   controlId="floatingSelectGrid"
-                  label="Day"
+                  label="Dia"
                 >
                   <Form.Select
                     className="fondo "
                     aria-label="Floating label select example"
                   >
                     <option>-</option>
-
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -205,7 +204,7 @@ function UserForm(props) {
                 <FloatingLabel
                   className="text-secondary"
                   controlId="floatingSelectGrid"
-                  label="Month"
+                  label="Mes"
                 >
                   <Form.Select
                     className="fondo"
@@ -222,7 +221,7 @@ function UserForm(props) {
                 <FloatingLabel
                   className="text-secondary"
                   controlId="floatingSelectGrid"
-                  label="Year"
+                  label="Año"
                 >
                   <Form.Select
                     className="fondo"
