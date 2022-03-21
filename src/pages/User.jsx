@@ -13,7 +13,6 @@ import { Link } from "react-router-dom";
 function User() {
   const [, , path] = window.location.pathname.split("/");
   const tweetList = useSelector((state) => state.tweets);
-  // const [privateStateTweet, setprivateStateTweet] = useState(tweetList);
   const token = useSelector((state) => state.users[0].token);
   const userId = useSelector((state) => state.users[0].id);
   const dispatch = useDispatch();
@@ -28,7 +27,6 @@ function User() {
       );
       const { postUser, tweets, formattedDate } = data;
       dispatch(actions.getUserTweets(tweets));
-      // setprivateStateTweet([...tweets]);
 
       setPostUser({ ...postUser });
       setJoinedDate(formattedDate);

@@ -23,15 +23,6 @@ function SideBarL() {
     if (!newTweetContent) return;
     const tweetData = {
       content: newTweetContent,
-      likes: [],
-      author: {
-        id: sessionData.id,
-        username: sessionData.username,
-        firstname: sessionData.firstname,
-        lastname: sessionData.lastname,
-        avatar: sessionData.avatar,
-      },
-      createdAt: "Now",
     };
     try {
       const response = await axios.post(
@@ -39,9 +30,9 @@ function SideBarL() {
         tweetData,
         { headers: { Authorization: `Bearer ${sessionData.token}` } }
       );
-      console.log(response.data);
-      console.log(tweetData);
-      dispatch(actions.create(tweetData));
+      // console.log(response.data);
+      // console.log(tweetData);
+      dispatch(actions.create(response.data));
     } catch (error) {
       console.log(error);
     }
