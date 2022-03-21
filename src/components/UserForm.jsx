@@ -100,7 +100,7 @@ function UserForm(props) {
               </Col>
             </Row>
             <Row className="p-4 w-100 bd-highlight ">
-              <h1 className="tituloCrear">Crea tu cuenta</h1>
+              <h1 className="tituloCrear">Creat your account</h1>
             </Row>
           </Row>
         </Container>
@@ -111,25 +111,26 @@ function UserForm(props) {
                 <FloatingLabel
                   className="m-3 text-secondary"
                   controlId="Nombre"
-                  label="Nombre"
+                  label="First Name"
                 >
                   <Form.Control
                     className="fondo"
                     type="text"
-                    placeholder="First Name"
+                    placeholder="Nombre"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
                 </FloatingLabel>
                 <FloatingLabel
                   className="m-3 text-secondary"
-                  controlId="Apellido"
+                  controlId="
+                  Last name"
                   label="Apellido"
                 >
                   <Form.Control
                     className="fondo"
                     type="text"
-                    placeholder="Last Name"
+                    placeholder="Apellido"
                     value={surname}
                     onChange={(e) => setSurname(e.target.value)}
                   />
@@ -175,25 +176,25 @@ function UserForm(props) {
               </Col>
             </Row>
             <Row>
-              <h5 className="text-white">Fecha de nacimiento</h5>
+              <h5 className="text-white">Date of birth</h5>
               <p className="text-secondary">
-                Esta informacion no sera publica. Confirma tu propia edad
-                incluso si esta cuenta es para una empresa, una mascota y otra
-                cosa.
-              </p>{" "}
+                This information will not be public. Confirm your own age even
+                if this account is for a company, a pet and another thing.
+              </p>
             </Row>
             <Row>
               <Col xs={6} md={4}>
                 <FloatingLabel
                   className="text-secondary"
                   controlId="floatingSelectGrid"
-                  label="Dia"
+                  label="Day"
                 >
                   <Form.Select
                     className="fondo "
                     aria-label="Floating label select example"
                   >
                     <option>-</option>
+
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -204,7 +205,7 @@ function UserForm(props) {
                 <FloatingLabel
                   className="text-secondary"
                   controlId="floatingSelectGrid"
-                  label="Mes"
+                  label="Month"
                 >
                   <Form.Select
                     className="fondo"
@@ -221,7 +222,7 @@ function UserForm(props) {
                 <FloatingLabel
                   className="text-secondary"
                   controlId="floatingSelectGrid"
-                  label="Año"
+                  label="Year"
                 >
                   <Form.Select
                     className="fondo"

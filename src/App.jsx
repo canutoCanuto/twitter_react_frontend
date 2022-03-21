@@ -26,7 +26,6 @@ function App() {
         ) : (
           <Route path="/login" element={<Welcome />} />
         )}
-        <Route path="/register" element={<UserForm />} />
       </Routes>
       <ToastContainer />
     </div>
