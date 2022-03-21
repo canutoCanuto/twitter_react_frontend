@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 function User() {
   const [, , path] = window.location.pathname.split("/");
   const tweetList = useSelector((state) => state.tweets);
-  const [privateStateTweet, setprivateStateTweet] = useState(tweetList);
+  // const [privateStateTweet, setprivateStateTweet] = useState(tweetList);
   const token = useSelector((state) => state.users[0].token);
   const userId = useSelector((state) => state.users[0].id);
   const dispatch = useDispatch();
@@ -28,7 +28,7 @@ function User() {
       );
       const { postUser, tweets, formattedDate } = data;
       dispatch(actions.getUserTweets(tweets));
-      setprivateStateTweet([...tweets]);
+      // setprivateStateTweet([...tweets]);
 
       setPostUser({ ...postUser });
       setJoinedDate(formattedDate);
@@ -60,7 +60,7 @@ function User() {
   useEffect(() => {
     dispatch(actions.clearRandomList());
     getProfileTweets();
-  }, [privateStateTweet]);
+  }, []);
 
   const [followButton, setFollowButton] = useState("Follow");
   useEffect(() => {
@@ -98,11 +98,11 @@ function User() {
               <p className="fw-bold fs-4 mb-0 text-light text-start ps-2">
                 {postUser.firstname} {postUser.lastname}
               </p>
-              <p className="text-muted mb-2 text-start ps-2">
+              {/* <p className="text-muted mb-2 text-start ps-2">
                 {privateStateTweet.length < 2
                   ? privateStateTweet.length + " Tweet"
                   : privateStateTweet.length + " Tweets"}
-              </p>
+              </p> */}
             </div>
           </div>
           <div className="row bg-black text-light justify-content-evenly mx-1">
@@ -146,7 +146,7 @@ function User() {
           </div>
           <div className="row tweet-list-border">
             <Col className="p-0">
-              {privateStateTweet
+              {tweetList
                 .map((tweet) => <Tweet key={tweet.id} tweet={tweet} />)
                 .reverse()}
             </Col>

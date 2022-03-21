@@ -7,7 +7,7 @@ import Tweet from "./Tweet";
 
 function TweetList() {
   const tweetList = useSelector((state) => state.tweets);
-  const [privateStateTweets, setPrivateStateTweets] = useState(tweetList);
+  // const [privateStateTweets, setPrivateStateTweets] = useState(tweetList);
   const token = useSelector((state) => state.users[0].token);
   const dispatch = useDispatch();
 
@@ -18,7 +18,8 @@ function TweetList() {
         { headers: { Authorization: `Bearer ${token}` } }
       );
       dispatch(actions.randomList(response.data.last100Tweets));
-      setPrivateStateTweets([...tweetList]);
+      // setPrivateStateTweets(response.data.last100Tweets);
+      // console.log(privateStateTweets);
     } catch (error) {
       console.log(error);
     }
@@ -27,9 +28,9 @@ function TweetList() {
   useEffect(() => {
     dispatch(actions.clearRandomList());
     getTweets();
-  }, [privateStateTweets]);
+  }, []);
 
-  return privateStateTweets
+  return tweetList
     .map((tweet) => <Tweet tweet={tweet} key={tweet.id} />)
     .reverse();
 }
