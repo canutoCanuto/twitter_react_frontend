@@ -30,7 +30,7 @@ function Login() {
       dispatch(actions.login(response.data));
       navigate("/home");
     } catch (error) {
-      setErrorMessage("¡Error!");
+      setErrorMessage("Error!");
       console.log(error);
     }
   };

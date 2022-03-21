@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import actions from "../redux/userActions";
+import { useDispatch } from "react-redux";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -25,6 +27,8 @@ function UserForm(props) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -37,22 +41,30 @@ function UserForm(props) {
         email: email,
         password: password,
       });
-      toast.success("Register successfully!", {
+      toast.success("Registered successfully!", {
         position: "top-right",
         autoClose: 2500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
-
         progress: undefined,
       });
-      setName("");
-      setSurname("");
-      setUsername("");
-      setEmail("");
-      setPassword("");
+      try {
+        const response = await axios.post(
+          process.env.REACT_APP_API_URL + "/users/login",
+          {
+            username: username,
+            email: email,
+            password: password,
+          }
+        );
+        dispatch(actions.login(response.data));
+        navigate("/home");
+      } catch (error) {
+        console.log(error);
+      }
     } catch (error) {
-      toast.info(" Error, faltan completar campos.", {
+      toast.info(" Error, some fields need to be completed.", {
         position: "top-right",
         autoClose: 2500,
         hideProgressBar: false,
@@ -101,7 +113,7 @@ function UserForm(props) {
               </Col>
             </Row>
             <Row className="p-4 w-100 bd-highlight ">
-              <h1 className="tituloCrear">Crea tu cuenta</h1>
+              <h1 className="tituloCrear">Create your account</h1>
             </Row>
           </Row>
         </Container>
@@ -238,7 +250,7 @@ function UserForm(props) {
           </Container>
         </Modal.Body>
         <Modal.Footer className="backmodal">
-          <Button onClick={handleRegister}>Registrar</Button>
+          <Button onClick={handleRegister}>Sign up</Button>
         </Modal.Footer>
       </Modal>
     </>
