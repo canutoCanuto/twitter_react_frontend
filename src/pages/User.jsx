@@ -8,21 +8,22 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import "./User.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function User() {
-  const [, , path] = window.location.pathname.split("/");
+  //const [, , path] = window.location.pathname.split("/");
   const tweetList = useSelector((state) => state.tweets);
   const token = useSelector((state) => state.users[0].token);
   const userId = useSelector((state) => state.users[0].id);
   const dispatch = useDispatch();
   const [postUser, setPostUser] = useState({});
   const [joinedDate, setJoinedDate] = useState("");
+  const params = useParams();
 
   const getProfileTweets = async () => {
     try {
       const { data } = await axios.get(
-        process.env.REACT_APP_API_URL + `/users/${path}`,
+        process.env.REACT_APP_API_URL + `/users/${params.username}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       const { postUser, tweets, formattedDate } = data;
@@ -46,7 +47,7 @@ function User() {
       });
 
       await axios({
-        url: process.env.REACT_APP_API_URL + `/users/${postUser._id}/follow`,
+        url: process.env.REACT_APP_API_URL + `/users/${postUser.id}/follow`,
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -65,7 +66,7 @@ function User() {
   useEffect(() => {
     dispatch(actions.clearRandomList());
     getProfileTweets();
-  }, []);
+  }, [params.username]);
 
   return (
     <Container>
