@@ -1,6 +1,11 @@
-.contenedorModal {
+/* .contenedorModal {
   background-color: grey;
+} */
+
+.backmodal {
+  border: 1px solid #ffffff;
 }
+
 .backmodal {
   background-color: black;
 }
@@ -17,9 +22,9 @@
   background-color: rgb(0, 0, 0);
 }
 
-.fondo {
+/* .fondo {
   background-color: rgb(0, 0, 0);
-}
+} */
 .fondo:focus {
   background-color: rgb(0, 0, 0);
 }

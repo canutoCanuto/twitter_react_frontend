@@ -89,105 +89,111 @@ function UserForm(props) {
         {...props}
         aria-labelledby="contained-modal-title-vcenter"
         className="contenedorModal"
+        onHide={handleClose}
       >
-        <Container className="backmodal">
-          <Row className="space d-flex bd-highlight">
-            <Row className="justify-content-end">
-              <Col className="m-3 ">
-                <CloseButton onClick={handleClose} className="text-light ">
-                  X
-                </CloseButton>
-              </Col>
-              <Col></Col>
-              <Col></Col>
-              <Col>
-                <span className="">
-                  <svg
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                    className="logobox m-3  "
-                  >
-                    <path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"></path>
-                  </svg>
-                </span>
-              </Col>
-            </Row>
-            <Row className="p-4 w-100 bd-highlight ">
-              <h1 className="tituloCrear">Create your account</h1>
-            </Row>
-          </Row>
-        </Container>
-        <Modal.Body className="show-grid backmodal">
-          <Container>
-            <Row>
-              <Col xs={12} md={8} className="form-floating mb-4 labeltext">
-                <FloatingLabel
-                  className="m-3 text-secondary"
-                  controlId="Nombre"
-                  label="First Name"
+        <Modal.Body className="show-grid bg-black text-light backmodal">
+          <div className="d-flex justify-content-between modal-body">
+            <div>
+              <button
+                type="button"
+                className="btn-close btn-close-white"
+                aria-label="Close"
+                onClick={handleClose}
+              ></button>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 24 24 "
+              className="logobox"
+            >
+              <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+            </svg>
+          </div>
+          <div className="px-2 pt-2">
+            <h2 className="modal-title text-white fw-bold pb-4">
+              Create your account
+            </h2>
+
+            <div className="form-floating mb-3 labeltext">
+              <FloatingLabel
+                className="m-3 text-secondary"
+                controlId="Nombre"
+                label="First Name"
+              >
+                <Form.Control
+                  className="bg-dark text-white"
+                  type="text"
+                  placeholder="First Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </FloatingLabel>
+              <FloatingLabel
+                className="m-3 text-secondary"
+                controlId="Apellido"
+                label="LastName"
+              >
+                <Form.Control
+                  className="bg-dark text-white"
+                  type="text"
+                  placeholder="Last Name"
+                  value={surname}
+                  onChange={(e) => setSurname(e.target.value)}
+                />
+              </FloatingLabel>
+              <FloatingLabel
+                className="m-3 text-secondary"
+                controlId="Username"
+                label="Username"
+              >
+                <Form.Control
+                  className="bg-dark text-white"
+                  type="text"
+                  placeholder="Username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+              </FloatingLabel>
+              <FloatingLabel
+                className="m-3 text-secondary"
+                controlId="Email"
+                label="Email"
+              >
+                <Form.Control
+                  className="bg-dark text-white"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </FloatingLabel>
+              <FloatingLabel
+                className="m-3 text-secondary"
+                controlId="Password"
+                label="Password"
+              >
+                <Form.Control
+                  className="bg-dark text-white"
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </FloatingLabel>
+            </div>
+            <div className="row g-2">
+              <div className="d-grid gap-2 py-5">
+                <Button
+                  onClick={handleRegister}
+                  className="btn btn-light fw-bold rounded-pill text-black"
                 >
-                  <Form.Control
-                    className="fondo"
-                    type="text"
-                    placeholder="First Name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                  />
-                </FloatingLabel>
-                <FloatingLabel
-                  className="m-3 text-secondary"
-                  controlId="Apellido"
-                  label="LastName"
-                >
-                  <Form.Control
-                    className="fondo"
-                    type="text"
-                    placeholder="Last Name"
-                    value={surname}
-                    onChange={(e) => setSurname(e.target.value)}
-                  />
-                </FloatingLabel>
-                <FloatingLabel
-                  className="m-3 text-secondary"
-                  controlId="Username"
-                  label="Username"
-                >
-                  <Form.Control
-                    className="fondo"
-                    type="text"
-                    placeholder="Username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                  />
-                </FloatingLabel>
-                <FloatingLabel
-                  className="m-3 text-secondary"
-                  controlId="Email"
-                  label="Email"
-                >
-                  <Form.Control
-                    className="fondo"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </FloatingLabel>
-                <FloatingLabel
-                  className="m-3 text-secondary"
-                  controlId="Password"
-                  label="Password"
-                >
-                  <Form.Control
-                    className="fondo"
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </FloatingLabel>
-              </Col>
-            </Row>
-            <Row>
+                  Sign up
+                </Button>
+              </div>
+            </div>
+          </div>
+          {/* <Row>
               <h5 className="text-white">Date of birth</h5>
               <p className="text-secondary">
                 This information will not be public. Confirm your own age even
@@ -246,12 +252,8 @@ function UserForm(props) {
                   </Form.Select>
                 </FloatingLabel>
               </Col>
-            </Row>
-          </Container>
+            </Row> */}
         </Modal.Body>
-        <Modal.Footer className="backmodal">
-          <Button onClick={handleRegister}>Sign up</Button>
-        </Modal.Footer>
       </Modal>
     </>
   );
