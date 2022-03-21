@@ -41,9 +41,9 @@ function User() {
     try {
       setFollowButton((prev) => {
         if (prev === "unFollow") {
-          setFollowButton("Follow");
+          return "Follow";
         } else {
-          setFollowButton("unFollow");
+          return "unFollow";
         }
       });
 
@@ -57,17 +57,17 @@ function User() {
     }
   };
 
-  useEffect(() => {
-    dispatch(actions.clearRandomList());
-    getProfileTweets();
-  }, []);
-
   const [followButton, setFollowButton] = useState("Follow");
   useEffect(() => {
     if (postUser.followers && postUser.followers.includes(userId)) {
       setFollowButton("unFollow");
     }
   }, [postUser]);
+
+  useEffect(() => {
+    dispatch(actions.clearRandomList());
+    getProfileTweets();
+  }, []);
 
   return (
     <Container>
@@ -130,9 +130,9 @@ function User() {
               </p>
               <p className="text-light text-start">
                 {postUser.following ? postUser.following.length : 0}
-                <span className="text-muted me-2">Following </span>
+                <span className="text-muted me-2"> Following </span>
                 {postUser.followers ? postUser.followers.length : 0}
-                <span className="text-muted">Followers </span>
+                <span className="text-muted"> Followers </span>
               </p>
             </div>
             <div className="col-3 align-self-center">
