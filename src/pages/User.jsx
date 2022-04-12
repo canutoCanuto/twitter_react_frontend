@@ -150,9 +150,9 @@ function User() {
           </div>
           <div className="row tweet-list-border">
             <Col className="p-0">
-              {tweetList
-                .map((tweet) => <Tweet key={tweet.id} tweet={tweet} />)
-                .reverse()}
+              {tweetList.map((tweet) => (
+                <Tweet key={tweet.id} tweet={tweet} />
+              ))}
             </Col>
           </div>
         </Col>

@@ -1,7 +1,7 @@
 function tweetReducer(state = [], action) {
   switch (action.type) {
     case "CREATE_TWEET":
-      return [...state, action.payload];
+      return [action.payload, ...state];
 
     case "GET_RANDOM_TWEETS":
       return [...state, ...action.payload];

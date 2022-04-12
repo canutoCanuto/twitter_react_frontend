@@ -25,6 +25,7 @@ function CreateTweet() {
         }
       );
       dispatch(actions.create(response.data));
+      // dispatch(actions.randomList(response.data.last100Tweets));
     } catch (error) {
       console.log(error);
     }
