@@ -1,25 +1,4 @@
-/* .btn-follow {
-  color: white;
-  background-color: #1da1f2;
-} */
-
 .profileimage {
   height: 125px;
   width: 125px;
-}
-
-.tweet-list-border {
-  border-top: solid;
-  border-color: #2f3336;
-  border-width: 1px;
-}
-
-.profile-info-borders {
-  border-left: solid;
-  border-right: solid;
-  border-color: #2f3336;
-  border-width: 1px;
-}
-.contenedorProfile {
-  padding: 8px;
 }
