@@ -25,6 +25,7 @@ function CreateTweet() {
         }
       );
       dispatch(actions.create(response.data));
+      // dispatch(actions.randomList(response.data.last100Tweets));
     } catch (error) {
       console.log(error);
     }
@@ -46,7 +47,7 @@ function CreateTweet() {
           <Form.Control
             as="textarea"
             style={{ height: "8rem" }}
-            className="bg-black text-light"
+            className="bg-black text-light createtweet-formcontrol"
             placeholder="What's happening?"
             value={newTweetContent}
             onChange={(e) => setNewTweetContent(e.target.value)}

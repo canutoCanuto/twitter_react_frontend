@@ -1,0 +1,13 @@
+.about-btn {
+  position: fixed;
+  top: 50vh;
+  right: -25px;
+  transform: rotate(-90deg);
+  background-color: #1da1f2;
+}
+
+.team-profile-pic {
+  object-fit: cover;
+  height: 100px;
+  width: 100px;
+}

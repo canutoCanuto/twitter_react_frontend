@@ -70,7 +70,7 @@ function Widgets() {
           <div className="row mb-3">
             <div className="col-2 me-2">
               <img
-                className="whotofollow-avatar  rounded-circle"
+                className="whotofollow-avatar rounded-circle"
                 src="/img/avi_observador.jpg"
                 alt="Avatar"
               />

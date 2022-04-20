@@ -8,6 +8,7 @@ import UserForm from "./components/UserForm";
 import "./components/LogoutPopover.css";
 import { useSelector } from "react-redux";
 import { ToastContainer } from "react-toastify";
+import AboutUs from "./components/AboutUs";
 
 function App() {
   const loggedUser = useSelector((state) => state.users[0]);
@@ -27,6 +28,7 @@ function App() {
           <Route path="/login" element={<Welcome />} />
         )}
       </Routes>
+      <AboutUs />
       <ToastContainer />
     </div>
   );

@@ -6,9 +6,9 @@ import actions from "../redux/userActions";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const [show, setShow] = useState(false);
-  const [data, setData] = useState("");
-  const [password, setPassword] = useState("");
+  const [show, setShow] = useState(true);
+  const [data, setData] = useState("admin");
+  const [password, setPassword] = useState("admin");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();

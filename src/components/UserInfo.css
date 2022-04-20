@@ -1,0 +1,14 @@
+.user-info-borders {
+  border-left: solid;
+  border-right: solid;
+  border-bottom: solid;
+  border-color: #2f3336;
+  border-width: 1px;
+}
+
+.user-info-header-borders {
+  border-left: solid;
+  border-right: solid;
+  border-color: #2f3336;
+  border-width: 1px;
+}
