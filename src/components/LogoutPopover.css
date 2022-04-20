@@ -1,11 +1,16 @@
-.botonModal :hover {
+/* .botonModal :hover {
   border-color: #1da1f2;
   border-radius: 30px;
   box-shadow: inset;
+} */
+
+.botonModal:hover {
+  background-color: #1b1b1b;
+  transition: 0.3s;
 }
 
 .botonModal {
-  border-color: #1da1f2;
+  /* border-color: #1da1f2; */
   border-radius: 30px;
   width: 280px;
   font-size: 13px;

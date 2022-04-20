@@ -2,7 +2,7 @@ import "./TweetList.css";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import actions from "../redux/tweetActions";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Tweet from "./Tweet";
 
 function TweetList() {
