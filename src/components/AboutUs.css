@@ -1,7 +1,7 @@
 .about-btn {
   position: fixed;
   top: 50vh;
-  right: -20px;
+  right: -25px;
   transform: rotate(-90deg);
   background-color: #1da1f2;
 }
